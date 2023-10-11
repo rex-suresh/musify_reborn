@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:musify_reborn/src/screens/HomeScreen.dart';
+import 'package:musify_reborn/src/app/main_screen.dart';
+import 'package:musify_reborn/src/screens/player_screen.dart';
+import 'package:musify_reborn/src/screens/search_screen.dart';
 
 class MyApp extends StatelessWidget {
   static ThemeData theme = ThemeData.dark(useMaterial3: true);
@@ -8,10 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/': (context) => const MainScreen(),
+        '/search': (context) => const SearchScreen(),
+        '/player': (context) => const PlayerScreen(),
+      },
       theme: theme,
-      home: const HomeScreen(),
+      home: const MainScreen(),
     );
   }
 }
-
-void main() => runApp(const MyApp());
