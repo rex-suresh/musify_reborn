@@ -8,8 +8,14 @@ class Musify extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: theme,
-      home: const MainScreen(),
+      home: SafeArea(
+          child: Theme(
+        data: theme.copyWith(
+          splashFactory: NoSplash.splashFactory,
+          hoverColor: Colors.transparent,
+        ),
+        child: const MainScreen(),
+      )),
     );
   }
 }

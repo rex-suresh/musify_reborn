@@ -35,8 +35,10 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:
-            Text('This hurts! $currentIndex', textDirection: TextDirection.ltr),
+        body: Text(
+          'Hey mom! this is page $currentIndex',
+          textDirection: TextDirection.ltr,
+        ),
         bottomNavigationBar: BottomNavigationBar(
           items: [homeNav, searchNav, playerNav],
           enableFeedback: true,
@@ -47,11 +49,3 @@ class _MainScreenState extends State<MainScreen> {
         ));
   }
 }
-
-// SafeArea(
-//           child: Container(
-//         padding: const EdgeInsets.all(20),
-//         child: const Text(
-//           "Hey mom!",
-//           textDirection: TextDirection.ltr,
-//         ),
