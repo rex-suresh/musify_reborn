@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:musify_reborn/src/misc/icon.dart';
+import 'package:musify_reborn/src/screens/home_screen.dart';
+import 'package:musify_reborn/src/screens/player_screen.dart';
+import 'package:musify_reborn/src/screens/search_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -10,6 +13,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
+  late Widget _body;
 
   final BottomNavigationBarItem homeNav = const BottomNavigationBarItem(
     label: 'Home',
@@ -34,10 +38,12 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    screenSelector();
+
     return Scaffold(
-        body: Text(
-          'Hey mom! this is page $currentIndex',
-          textDirection: TextDirection.ltr,
+        body: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+          child: _body,
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: [homeNav, searchNav, playerNav],
@@ -47,5 +53,16 @@ class _MainScreenState extends State<MainScreen> {
           onTap: _onItemTapped,
           currentIndex: currentIndex,
         ));
+  }
+
+  void screenSelector() {
+    switch (currentIndex) {
+      case 1:
+        _body = const SearchScreen();
+      case 2:
+        _body = const PlayerScreen();
+      default:
+        _body = const HomeScreen();
+    }
   }
 }
