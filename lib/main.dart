@@ -12,7 +12,6 @@ class Musify extends StatelessWidget {
           child: Theme(
         data: theme.copyWith(
           splashFactory: NoSplash.splashFactory,
-          hoverColor: Colors.transparent,
         ),
         child: const MainScreen(),
       )),

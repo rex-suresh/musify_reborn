@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:musify_reborn/src/blocs/search_results.dart';
 import 'package:musify_reborn/src/misc/titles.dart';
+import 'package:musify_reborn/src/widgets/search_bar.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -11,10 +13,8 @@ class SearchScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ScreenTitle(title: 'Search'),
-        Text(
-          "Hey mom! I'm searching home",
-          textDirection: TextDirection.ltr,
-        )
+        MusifySearch(),
+        SearchResults(),
       ],
     );
   }
