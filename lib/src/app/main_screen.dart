@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:musify_reborn/src/misc/icon.dart';
-import 'package:musify_reborn/src/screens/home_screen.dart';
-import 'package:musify_reborn/src/screens/player_screen.dart';
-import 'package:musify_reborn/src/screens/search_screen.dart';
+
+import '../screens/home_screen.dart';
+import '../screens/player_screen.dart';
+import '../screens/search_screen.dart';
+import '../misc/icon.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

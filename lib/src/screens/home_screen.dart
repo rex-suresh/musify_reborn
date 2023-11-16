@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:musify_reborn/src/misc/titles.dart';
+import 'package:musify_reborn/src/widgets/playlist_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,10 +12,15 @@ class HomeScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ScreenTitle(title: 'Home'),
-        Text(
-          "Hey mom! I'm home",
-          textDirection: TextDirection.ltr,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [PlaylistCard(), PlaylistCard()],
         )
+        // ListWithTitle(title: 'Top Playlists', data: [], listItem: PlatlistCard),
+        // Playlists
+        // Tracks
+        // Albums
+        // Artists
       ],
     );
   }
