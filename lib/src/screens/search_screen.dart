@@ -8,14 +8,11 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ScreenTitle(title: 'Search'),
-        MusifySearch(),
-        SearchResults(),
-      ],
+    return Scaffold(
+      appBar: screenTitle("Search"),
+      body: const Column(
+        children: [MusifySearch(), SearchResults()],
+      ),
     );
   }
 }

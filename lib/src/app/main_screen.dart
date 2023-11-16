@@ -13,8 +13,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int currentIndex = 0;
-  late Widget _body;
+  int currentScreenIndex = 0;
 
   final BottomNavigationBarItem homeNav = const BottomNavigationBarItem(
     label: 'Home',
@@ -33,37 +32,25 @@ class _MainScreenState extends State<MainScreen> {
 
   void _onItemTapped(int index) {
     setState(() {
-      currentIndex = index;
+      currentScreenIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    screenSelector();
-
     return Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-          child: _body,
-        ),
+        body: const [
+          HomeScreen(),
+          SearchScreen(),
+          PlayerScreen()
+        ][currentScreenIndex],
         bottomNavigationBar: BottomNavigationBar(
           items: [homeNav, searchNav, playerNav],
           enableFeedback: true,
           showUnselectedLabels: false,
           selectedItemColor: Colors.white,
           onTap: _onItemTapped,
-          currentIndex: currentIndex,
+          currentIndex: currentScreenIndex,
         ));
-  }
-
-  void screenSelector() {
-    switch (currentIndex) {
-      case 1:
-        _body = const SearchScreen();
-      case 2:
-        _body = const PlayerScreen();
-      default:
-        _body = const HomeScreen();
-    }
   }
 }

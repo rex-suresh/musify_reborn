@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class ScreenTitle extends StatelessWidget {
-  final String title;
-  const ScreenTitle({super.key, required this.title});
+AppBar Function(String title) screenTitle = (String title) {
+  var textStyle = const TextStyle(
+    color: Colors.white,
+    fontSize: 32,
+    fontWeight: FontWeight.w200,
+  );
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(
+  return AppBar(
+    title: Text(
       title,
-      textDirection: TextDirection.ltr,
-      style: const TextStyle(
-        color: Colors.white,
-        fontSize: 32,
-        fontWeight: FontWeight.w200,
-      ),
-    );
-  }
-}
+      style: textStyle,
+    ),
+    centerTitle: false,
+    automaticallyImplyLeading: false,
+    leading: null,
+  );
+};
