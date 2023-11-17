@@ -1,0 +1,65 @@
+{
+  "playlists": [
+    {
+      "id": "pp.225974698",
+      "name": "New Music Weekly",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.225974698/artists/images/500x500.jpg?montage=2x2",
+      "description": "Check out some of this week's best new releases. Cover: Ava Max"
+    },
+    {
+      "id": "pp.214725454",
+      "name": "Trending Pop",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.214725454/artists/images/500x500.jpg?montage=2x2",
+      "description": "Pop songs that are bubbling up right now! Cover: GAYLE"
+    },
+    {
+      "id": "pp.180234724",
+      "name": "Trending Hip-Hop",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.180234724/artists/images/500x500.jpg?montage=2x2",
+      "description": "Dig into the hottest and buzziest Hip-Hop tracks of right now"
+    },
+    {
+      "id": "pp.179780609",
+      "name": "Trending Rock",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.179780609/artists/images/500x500.jpg?montage=2x2",
+      "description": "Your go-to playlist for big hits and new releases. Turn it up!"
+    },
+    {
+      "id": "pp.224772103",
+      "name": "Trending Country",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.224772103/artists/images/500x500.jpg?montage=2x2",
+      "description": "Top trending country songs"
+    },
+    {
+      "id": "pp.253600731",
+      "name": "Song of the Day",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.253600731/artists/images/500x500.jpg?montage=2x2",
+      "description": "Handpicked songs you need to hear"
+    },
+    {
+      "id": "pp.179829496",
+      "name": "Top 50 USA",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.179829496/artists/images/500x500.jpg?montage=2x2",
+      "description": "The most streamed songs on Napster US this week. #1 Morgan Wallen"
+    },
+    {
+      "id": "pp.227349347",
+      "name": "Pure Flow",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.227349347/artists/images/500x500.jpg?montage=2x2",
+      "description": "Strictly rhymes and beats for today's true Hip-Hop heads"
+    },
+    {
+      "id": "pp.222517949",
+      "name": "Global Trending",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.222517949/artists/images/500x500.jpg?montage=2x2",
+      "description": "Globally trending tracks"
+    },
+    {
+      "id": "pp.234639838",
+      "name": "Lovers Lane",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.234639838/artists/images/500x500.jpg?montage=2x2",
+      "description": "For a slightly more mature taste in today's R&B"
+    }
+  ],
+  "type": "playlists-list"
+}

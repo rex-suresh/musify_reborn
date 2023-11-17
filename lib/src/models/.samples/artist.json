@@ -1,0 +1,55 @@
+{
+  "artists": [
+    {
+      "id": "Art.468545306",
+      "name": "Dwayne Baldwin",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.468545306/images/500x500.jpg"
+    },
+    {
+      "id": "Art.468298699",
+      "name": "Filip Bosnjak",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.468298699/images/500x500.jpg"
+    },
+    {
+      "id": "Art.63363024",
+      "name": "Jason Collins",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.63363024/images/500x500.jpg"
+    },
+    {
+      "id": "Art.10482910",
+      "name": "Taylor Swift",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.10482910/images/500x500.jpg"
+    },
+    {
+      "id": "Art.468545366",
+      "name": "Joe Metz",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.468545366/images/500x500.jpg"
+    },
+    {
+      "id": "Art.221592619",
+      "name": "Ricky Montgomery",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.221592619/images/500x500.jpg"
+    },
+    {
+      "id": "Art.31168604",
+      "name": "Lil Baby",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.31168604/images/500x500.jpg"
+    },
+    {
+      "id": "Art.28463069",
+      "name": "Drake",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.28463069/images/500x500.jpg"
+    },
+    {
+      "id": "Art.146985808",
+      "name": "Harry Styles",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.146985808/images/500x500.jpg"
+    },
+    {
+      "id": "Art.211160262",
+      "name": "A Boogie Wit da Hoodie",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.211160262/images/500x500.jpg"
+    }
+  ],
+  "type": "artists-list"
+}
