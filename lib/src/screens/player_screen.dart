@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../misc/titles.dart';
+import '../../src/blocs/padded_body.dart';
 
 class PlayerScreen extends StatelessWidget {
   const PlayerScreen({super.key});
@@ -9,7 +10,7 @@ class PlayerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: screenTitle("Player"),
-      body: const Text("Hey mom! I'm playing"),
+      body: const PaddedBody(child: Text("Hey mom! I'm playing")),
     );
   }
 }

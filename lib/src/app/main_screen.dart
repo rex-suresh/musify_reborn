@@ -38,12 +38,14 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final body = const [
+      HomeScreen(),
+      SearchScreen(),
+      PlayerScreen()
+    ][currentScreenIndex];
+
     return Scaffold(
-        body: const [
-          HomeScreen(),
-          SearchScreen(),
-          PlayerScreen()
-        ][currentScreenIndex],
+        body: body,
         bottomNavigationBar: BottomNavigationBar(
           items: [homeNav, searchNav, playerNav],
           enableFeedback: true,
