@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'main_screen.dart';
+import '../screens/main_screen.dart';
 
 class Musify extends StatelessWidget {
   const Musify({super.key});

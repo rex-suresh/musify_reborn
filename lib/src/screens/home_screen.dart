@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../misc/titles.dart';
 import '../../src/blocs/padded_body.dart';
+import '../widgets/album_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,7 +17,25 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: screenTitle(
           "Home"), // fn cuz type issue need to know how to solve this
-      body: const PaddedBody(child: Text("Hey mom! I'm home")),
+      body: PaddedBody(
+        child: Column(
+          children: [
+            const Text('List'),
+            SizedBox(
+              height: 210,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  AlbumCard(),
+                  AlbumCard(),
+                  AlbumCard(),
+                  AlbumCard()
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
       extendBody: true,
     );
   }

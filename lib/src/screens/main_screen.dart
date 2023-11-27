@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../screens/home_screen.dart';
-import '../screens/player_screen.dart';
-import '../screens/search_screen.dart';
+import 'home_screen.dart';
+import 'player_screen.dart';
+import 'search_screen.dart';
 import '../misc/icon.dart';
 
 class MainScreen extends StatefulWidget {
