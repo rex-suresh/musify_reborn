@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../misc/titles.dart';
-import '../../src/blocs/padded_body.dart';
-import '../widgets/album_card.dart';
+import '../blocs/padded_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -25,12 +24,7 @@ class HomeScreen extends StatelessWidget {
               height: 210,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: const [
-                  AlbumCard(),
-                  AlbumCard(),
-                  AlbumCard(),
-                  AlbumCard()
-                ],
+                children: const [],
               ),
             )
           ],

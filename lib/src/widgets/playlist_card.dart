@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 
+import '../models/models.dart';
+
 class PlaylistCard extends StatelessWidget {
-  const PlaylistCard({super.key});
+  final Playlist playlist;
+
+  const PlaylistCard({super.key, required this.playlist});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          color: Colors.amber,
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          )),
-      padding: const EdgeInsets.all(4),
-      child: const Column(children: [
-        Column(
-          children: [Text("Playlist Name"), Text("artists")],
-        )
-      ]),
+    return Card(
+      clipBehavior: Clip.hardEdge,
+      child: Column(
+        children: [
+          Image.network(
+            playlist.imageUrl,
+            width: 250,
+            height: 170,
+            fit: BoxFit.cover,
+          ),
+          ListTile(
+            title: Text(playlist.name),
+            subtitle: Text(playlist.description),
+            isThreeLine: true,
+          ),
+        ],
+      ),
     );
   }
 }

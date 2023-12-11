@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../src/misc/titles.dart';
-import '../../src/blocs/padded_body.dart';
-import '../../src/widgets/search_bar.dart';
+import '../misc/titles.dart';
+import '../blocs/padded_body.dart';
+import '../widgets/search_bar.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});

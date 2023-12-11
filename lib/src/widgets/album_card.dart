@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../models/models.dart';
+
 class AlbumCard extends StatelessWidget {
-  const AlbumCard({super.key});
+  final Album album;
+
+  const AlbumCard({super.key, required this.album});
 
   @override
   Widget build(BuildContext context) {
@@ -10,14 +14,14 @@ class AlbumCard extends StatelessWidget {
       child: Column(
         children: [
           Image.network(
-            "https://api.napster.com/imageserver/v2/albums/Alb.468545309/images/500x500.jpg",
+            album.imageUrl,
+            width: 150,
             height: 150,
           ),
-          // const ListTile(
-          //   title: Text('Title text'),
-          //   subtitle: Text('Subtitle'),
-
-          // ),
+          ListTile(
+            title: Text(album.name),
+            subtitle: Text(album.artistName),
+          ),
         ],
       ),
     );
