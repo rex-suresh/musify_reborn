@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/models.dart';
+import '../../models/models.dart';
 
 class ArtistCard extends StatelessWidget {
   final Artist artist;

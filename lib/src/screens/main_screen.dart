@@ -3,56 +3,38 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'player_screen.dart';
 import 'search_screen.dart';
-import '../misc/icon.dart';
 
-class MainScreen extends StatefulWidget {
+class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
-  int currentScreenIndex = 0;
-
-  final BottomNavigationBarItem homeNav = const BottomNavigationBarItem(
-    label: 'Home',
-    icon: IconOf(icon: Icons.home_rounded),
-  );
-
-  final BottomNavigationBarItem searchNav = const BottomNavigationBarItem(
-    label: 'Search',
-    icon: IconOf(icon: Icons.search_rounded),
-  );
-
-  final BottomNavigationBarItem playerNav = const BottomNavigationBarItem(
-    label: 'Player',
-    icon: IconOf(icon: Icons.music_note_rounded),
-  );
-
-  void _onItemTapped(int index) {
-    setState(() {
-      currentScreenIndex = index;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final body = const [
-      HomeScreen(),
-      SearchScreen(),
-      PlayerScreen()
-    ][currentScreenIndex];
-
-    return Scaffold(
-        body: body,
-        bottomNavigationBar: BottomNavigationBar(
-          items: [homeNav, searchNav, playerNav],
-          enableFeedback: true,
-          showUnselectedLabels: false,
-          selectedItemColor: Colors.white,
-          onTap: _onItemTapped,
-          currentIndex: currentScreenIndex,
-        ));
+    return const Scaffold(
+      body: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          body: TabBarView(
+            children: [HomeScreen(), SearchScreen(), PlayerScreen()],
+          ),
+          bottomNavigationBar: TabBar(
+            tabs: [
+              Tab(text: 'Home', icon: Icon(Icons.home_rounded)),
+              Tab(text: 'Search', icon: Icon(Icons.search_rounded)),
+              Tab(text: 'Player', icon: Icon(Icons.music_note_rounded)),
+            ],
+            labelPadding: EdgeInsets.only(top: 2),
+            splashBorderRadius: BorderRadius.all(Radius.circular(10)),
+            enableFeedback: true,
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.grey,
+            unselectedLabelStyle:
+                TextStyle(color: Colors.transparent, fontSize: 0),
+            indicator: BoxDecoration(
+              border: Border(top: BorderSide(color: Colors.red, width: 1)),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

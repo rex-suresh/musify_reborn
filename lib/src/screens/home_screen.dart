@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../misc/titles.dart';
 import '../blocs/padded_body.dart';
+import '../widgets/top_track_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,18 +17,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: screenTitle(
           "Home"), // fn cuz type issue need to know how to solve this
-      body: PaddedBody(
+      body: const PaddedBody(
         child: Column(
-          children: [
-            const Text('List'),
-            SizedBox(
-              height: 210,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: const [],
-              ),
-            )
-          ],
+          children: [TopTrackList()],
         ),
       ),
       extendBody: true,

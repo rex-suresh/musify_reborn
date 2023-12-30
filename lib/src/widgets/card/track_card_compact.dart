@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/models.dart';
+import '../../models/models.dart';
 
 class TrackCardCompact extends StatelessWidget {
   final Track track;
