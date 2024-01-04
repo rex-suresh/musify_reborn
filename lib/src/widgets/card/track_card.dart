@@ -7,7 +7,7 @@ import '../../models/models.dart';
 class TrackCard extends StatelessWidget {
   final Track track;
 
-  const TrackCard({super.key, required this.track});
+  const TrackCard(this.track, {super.key});
 
   @override
   Widget build(BuildContext context) {
