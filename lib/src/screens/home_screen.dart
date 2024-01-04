@@ -9,20 +9,28 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Playlists
-    // Tracks
-    // Albums
-    // Artists
+    const List<Widget> screenContents = [
+      TopTrackList(), // Playlists
+      TopTrackList(), // Tracks
+      TopTrackList(), // Albums
+      TopTrackList(), // Artists
+    ];
 
     return Scaffold(
-      appBar: screenTitle(
-          "Home"), // fn cuz type issue need to know how to solve this
-      body: const PaddedBody(
-        child: Column(
-          children: [TopTrackList()],
+      body: PaddedBody(
+        hPad: 8,
+        child: CustomScrollView(
+          slivers: [
+            screenTitle("Home"),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) => screenContents[index],
+                  childCount: screenContents.length),
+            ),
+          ],
+          scrollDirection: Axis.vertical,
         ),
       ),
-      extendBody: true,
     );
   }
 }

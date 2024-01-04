@@ -9,7 +9,7 @@ class PlayerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: screenTitle("Player"),
+      // appBar: screenTitle("Player"),
       body: const PaddedBody(child: Text("Hey mom! I'm playing")),
     );
   }

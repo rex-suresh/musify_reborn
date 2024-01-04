@@ -10,7 +10,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: screenTitle("Search"),
+      // appBar: screenTitle("Search"),
       body: const PaddedBody(child: MusifySearch()),
       extendBody: true,
     );
