@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../misc/titles.dart';
 import '../blocs/padded_body.dart';
-import '../widgets/top_track_list.dart';
+import '../widgets/lists/top_track_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

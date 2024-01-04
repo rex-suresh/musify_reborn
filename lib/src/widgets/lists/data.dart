@@ -1,15 +1,4 @@
-import 'dart:convert' show jsonDecode;
-import 'package:flutter/material.dart';
-
-import 'package:musify_reborn/src/models/models.dart';
-import 'package:musify_reborn/src/widgets/card/track_card.dart';
-
-class TopTrackList extends StatelessWidget {
-  const TopTrackList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    var jsonData = '''
+var trackData = '''
 {
   "tracks": [
     {
@@ -316,17 +305,3 @@ class TopTrackList extends StatelessWidget {
   "type": "tracks-list"
 }
 ''';
-
-    var data = jsonDecode(jsonData) as Map<String, dynamic>;
-    var tracksList = data['tracks'] as List<dynamic>;
-    var tracks = tracksList.map((e) => Track.fromData(e));
-
-    return SizedBox(
-      height: 252,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: [...tracks.map((track) => TrackCard(track: track))],
-      ),
-    );
-  }
-}
