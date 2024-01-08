@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:musify_reborn/src/misc/titles.dart';
 
-import '../../widgets/image_thumbnail.dart';
+import '../images.dart';
 import '../../models/models.dart';
 
 class TrackCard extends StatelessWidget {

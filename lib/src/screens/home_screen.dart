@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       // TopPlaylists(),
       TopTracks(),
       TopAlbums(),
-      // TopArtists()
+      TopArtists()
     ];
 
     return Scaffold(

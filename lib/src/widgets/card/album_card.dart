@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../misc/titles.dart';
 import '../../models/models.dart';
-import '../image_thumbnail.dart';
+import '../images.dart';
 
 class AlbumCard extends StatelessWidget {
   static double size = 160;

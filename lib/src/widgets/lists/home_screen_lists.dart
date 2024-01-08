@@ -21,7 +21,7 @@ class TopTracks extends StatelessWidget {
 
     return MainScrollableList(
       data: tracks,
-      listTitle: "Top Tracks",
+      listTitle: "All Time Hits",
       widgetBuilder: (item) => TrackCard(item as Track),
       listHeight: 240,
     );
@@ -78,6 +78,7 @@ class TopArtists extends StatelessWidget {
       data: albums,
       listTitle: "Top Artists",
       widgetBuilder: (item) => ArtistCard(item as Artist),
+      listHeight: 237,
     );
   }
 }
