@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../misc/titles.dart';
 import '../blocs/padded_body.dart';
-import '../widgets/lists/top_track_list.dart';
+import '../widgets/lists/home_screen_lists.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,10 +10,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const List<Widget> screenContents = [
-      TopTrackList(), // Playlists
-      TopTrackList(), // Tracks
-      TopTrackList(), // Albums
-      TopTrackList(), // Artists
+      // TopPlaylists(),
+      TopTracks(),
+      TopAlbums(),
+      // TopArtists()
     ];
 
     return Scaffold(
@@ -24,8 +24,9 @@ class HomeScreen extends StatelessWidget {
             screenTitle("Home"),
             SliverList(
               delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) => screenContents[index],
-                  childCount: screenContents.length),
+                (BuildContext context, int index) => screenContents[index],
+                childCount: screenContents.length,
+              ),
             ),
           ],
           scrollDirection: Axis.vertical,

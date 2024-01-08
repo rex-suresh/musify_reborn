@@ -5,7 +5,7 @@ import '../../models/models.dart';
 class PlaylistCard extends StatelessWidget {
   final Playlist playlist;
 
-  const PlaylistCard({super.key, required this.playlist});
+  const PlaylistCard(this.playlist, {super.key});
 
   @override
   Widget build(BuildContext context) {

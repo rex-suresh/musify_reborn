@@ -5,6 +5,7 @@ import '../../widgets/image_thumbnail.dart';
 import '../../models/models.dart';
 
 class TrackCard extends StatelessWidget {
+  static double size = 160;
   final Track track;
 
   const TrackCard(this.track, {super.key});
@@ -13,21 +14,21 @@ class TrackCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       clipBehavior: Clip.hardEdge,
-      child: Container(
-        padding: const EdgeInsets.all(12),
-        width: 180,
+      child: SizedBox(
+        width: size,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(6),
-              child: SizedBox(
-                height: 156,
-                width: 156,
-                child: ImageThumbnail(imageUrl: track.imageUrl),
-              ),
+            SizedBox(
+              height: size,
+              width: size,
+              child: ImageThumbnail(imageUrl: track.imageUrl),
             ),
-            TitlePlusSub(title: track.name, subTitle: track.artistName),
+            TitlePlusSub(
+              title: track.name,
+              subTitle: track.artistName,
+              hPad: 12,
+            ),
           ],
         ),
       ),

@@ -2,13 +2,21 @@ import 'package:flutter/material.dart';
 
 class ImageThumbnail extends StatelessWidget {
   final String imageUrl;
+  final String defaultImage;
 
-  const ImageThumbnail({super.key, required this.imageUrl});
+  const ImageThumbnail({
+    super.key,
+    required this.imageUrl,
+    this.defaultImage = 'assets/images/track.png',
+  });
 
   @override
   Widget build(BuildContext context) {
     return Image.network(
       imageUrl,
+      errorBuilder: (context, error, stackTrace) {
+        return Image.asset(defaultImage);
+      },
       loadingBuilder: (context, child, loadingProgress) {
         if (loadingProgress == null) return child;
 

@@ -5,7 +5,7 @@ import '../../models/models.dart';
 class ArtistCard extends StatelessWidget {
   final Artist artist;
 
-  const ArtistCard({super.key, required this.artist});
+  const ArtistCard(this.artist, {super.key});
 
   @override
   Widget build(BuildContext context) {

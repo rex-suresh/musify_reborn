@@ -21,6 +21,7 @@ class TopTrackList extends StatelessWidget {
       data: tracks,
       listTitle: "Top Tracks",
       widgetBuilder: (item) => TrackCard(item as Track),
+      listHeight: 200,
     );
   }
 }

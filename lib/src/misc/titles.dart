@@ -20,13 +20,19 @@ SliverAppBar Function(String title) screenTitle = (String title) {
 class TitlePlusSub extends StatelessWidget {
   final String title;
   final String subTitle;
+  final double hPad;
 
-  const TitlePlusSub({super.key, required this.title, required this.subTitle});
+  const TitlePlusSub({
+    super.key,
+    required this.title,
+    required this.subTitle,
+    this.hPad = 2,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 2),
+      contentPadding: EdgeInsets.symmetric(horizontal: hPad),
       title: Text(
         title,
         style: const TextStyle(fontSize: 14),

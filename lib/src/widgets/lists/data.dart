@@ -305,3 +305,357 @@ var trackData = '''
   "type": "tracks-list"
 }
 ''';
+
+var playlistData = '''
+{
+  "playlists": [
+    {
+      "id": "pp.225974698",
+      "name": "New Music Weekly",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.225974698/artists/images/500x500.jpg?montage=2x2",
+      "description": "Check out some of this week's best new releases. Cover: Ava Max"
+    },
+    {
+      "id": "pp.214725454",
+      "name": "Trending Pop",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.214725454/artists/images/500x500.jpg?montage=2x2",
+      "description": "Pop songs that are bubbling up right now! Cover: GAYLE"
+    },
+    {
+      "id": "pp.180234724",
+      "name": "Trending Hip-Hop",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.180234724/artists/images/500x500.jpg?montage=2x2",
+      "description": "Dig into the hottest and buzziest Hip-Hop tracks of right now"
+    },
+    {
+      "id": "pp.179780609",
+      "name": "Trending Rock",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.179780609/artists/images/500x500.jpg?montage=2x2",
+      "description": "Your go-to playlist for big hits and new releases. Turn it up!"
+    },
+    {
+      "id": "pp.224772103",
+      "name": "Trending Country",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.224772103/artists/images/500x500.jpg?montage=2x2",
+      "description": "Top trending country songs"
+    },
+    {
+      "id": "pp.253600731",
+      "name": "Song of the Day",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.253600731/artists/images/500x500.jpg?montage=2x2",
+      "description": "Handpicked songs you need to hear"
+    },
+    {
+      "id": "pp.179829496",
+      "name": "Top 50 USA",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.179829496/artists/images/500x500.jpg?montage=2x2",
+      "description": "The most streamed songs on Napster US this week. #1 Morgan Wallen"
+    },
+    {
+      "id": "pp.227349347",
+      "name": "Pure Flow",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.227349347/artists/images/500x500.jpg?montage=2x2",
+      "description": "Strictly rhymes and beats for today's true Hip-Hop heads"
+    },
+    {
+      "id": "pp.222517949",
+      "name": "Global Trending",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.222517949/artists/images/500x500.jpg?montage=2x2",
+      "description": "Globally trending tracks"
+    },
+    {
+      "id": "pp.234639838",
+      "name": "Lovers Lane",
+      "image": "https://api.napster.com/imageserver/v2/playlists/pp.234639838/artists/images/500x500.jpg?montage=2x2",
+      "description": "For a slightly more mature taste in today's R&B"
+    }
+  ],
+  "type": "playlists-list"
+}
+''';
+
+var albumData = '''
+{
+  "albums": [
+    {
+      "id": "Alb.468545309",
+      "name": "King",
+      "artist": {
+        "name": "Dwayne Baldwin",
+        "id": "Art.468545306"
+      },
+      "label": "BMC Music",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.468545309/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.468545425",
+      "name": "Falling",
+      "artist": {
+        "name": "Jason Collins",
+        "id": "Art.63363024"
+      },
+      "label": "Aliance Music",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.468545425/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.468545545",
+      "name": "Eclipse",
+      "artist": {
+        "name": "An Pellentier",
+        "id": "Art.468545542"
+      },
+      "label": "BMC Music",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.468545545/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.468545369",
+      "name": "Lava Flowing",
+      "artist": {
+        "name": "Joe Metz",
+        "id": "Art.468545366"
+      },
+      "label": "BMC Music",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.468545369/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.484959653",
+      "name": "Artist 2.0 (Deluxe)",
+      "artist": {
+        "name": "A Boogie Wit da Hoodie",
+        "id": "Art.211160262"
+      },
+      "label": "Highbridge the Label / Atlantic Records",
+      "explicit": true,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.484959653/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.440329089",
+      "name": "Thank You [Not So Bad]",
+      "artist": {
+        "name": "Vize",
+        "id": "Art.30141082"
+      },
+      "label": "Virgin",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.440329089/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.513922825",
+      "name": "Forever",
+      "artist": {
+        "name": "Anthoney",
+        "id": "Art.289982400"
+      },
+      "label": "Happy",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.513922825/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.538547373",
+      "name": "Montgomery Ricky",
+      "artist": {
+        "name": "Ricky Montgomery",
+        "id": "Art.221592619"
+      },
+      "label": "Warner Records",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.538547373/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.250451127",
+      "name": "Las Olvidadas",
+      "artist": {
+        "name": "Cumbre Nortena (1)",
+        "id": "Art.167016326"
+      },
+      "label": "Colecta Music LLC.",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.250451127/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.589262721",
+      "name": "Culture III",
+      "artist": {
+        "name": "Migos",
+        "id": "Art.67022684"
+      },
+      "label": "Quality Control Music/Motown Records",
+      "explicit": true,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.589262721/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.712545316",
+      "name": "Midnights (3am Edition)",
+      "artist": {
+        "name": "Taylor Swift",
+        "id": "Art.10482910"
+      },
+      "label": "Taylor Swift",
+      "explicit": true,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.712545316/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.719023868",
+      "name": "SATURNO",
+      "artist": {
+        "name": "Rauw Alejandro",
+        "id": "Art.242594428"
+      },
+      "label": "Sony Music Latin/Duars Entertainment",
+      "explicit": true,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.719023868/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.166121602",
+      "name": "Santa Fe",
+      "artist": {
+        "name": "Augie Meyers",
+        "id": "Art.4578"
+      },
+      "label": "El Sendero Records",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.166121602/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.227040233",
+      "name": "O My Heart",
+      "artist": {
+        "name": "Mother Mother",
+        "id": "Art.14435600"
+      },
+      "label": "Last Gang",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.227040233/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.468545470",
+      "name": "Blur",
+      "artist": {
+        "name": "John Dame",
+        "id": "Art.433499798"
+      },
+      "label": "BMC Music",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.468545470/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.548725349",
+      "name": "Dangerous: The Double Album",
+      "artist": {
+        "name": "Morgan Wallen",
+        "id": "Art.171338253"
+      },
+      "label": "Big Loud / Republic",
+      "explicit": true,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.548725349/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.668695540",
+      "name": "American Heartbreak",
+      "artist": {
+        "name": "Zach Bryan",
+        "id": "Art.329001177"
+      },
+      "label": "Warner Records",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.668695540/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.721348801",
+      "name": "SNOOP CUBE 40 \$HORT",
+      "artist": {
+        "name": "Mount Westmore",
+        "id": "Art.619885547"
+      },
+      "label": "MNRK Music",
+      "explicit": true,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.721348801/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.726317622",
+      "name": "Lofi Jazz",
+      "artist": {
+        "name": "Hadworks",
+        "id": "Art.635962283"
+      },
+      "label": "NautiGang",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.726317622/images/500x500.jpg"
+    },
+    {
+      "id": "Alb.113160623",
+      "name": "We As Human",
+      "artist": {
+        "name": "We As Human",
+        "id": "Art.12963418"
+      },
+      "label": "Atlantic Records",
+      "explicit": false,
+      "image": "https://api.napster.com/imageserver/v2/albums/Alb.113160623/images/500x500.jpg"
+    }
+  ],
+  "type": "albums-list"
+}
+''';
+
+var artistData = '''
+{
+  "artists": [
+    {
+      "id": "Art.468545306",
+      "name": "Dwayne Baldwin",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.468545306/images/500x500.jpg"
+    },
+    {
+      "id": "Art.468298699",
+      "name": "Filip Bosnjak",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.468298699/images/500x500.jpg"
+    },
+    {
+      "id": "Art.63363024",
+      "name": "Jason Collins",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.63363024/images/500x500.jpg"
+    },
+    {
+      "id": "Art.10482910",
+      "name": "Taylor Swift",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.10482910/images/500x500.jpg"
+    },
+    {
+      "id": "Art.468545366",
+      "name": "Joe Metz",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.468545366/images/500x500.jpg"
+    },
+    {
+      "id": "Art.221592619",
+      "name": "Ricky Montgomery",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.221592619/images/500x500.jpg"
+    },
+    {
+      "id": "Art.31168604",
+      "name": "Lil Baby",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.31168604/images/500x500.jpg"
+    },
+    {
+      "id": "Art.28463069",
+      "name": "Drake",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.28463069/images/500x500.jpg"
+    },
+    {
+      "id": "Art.146985808",
+      "name": "Harry Styles",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.146985808/images/500x500.jpg"
+    },
+    {
+      "id": "Art.211160262",
+      "name": "A Boogie Wit da Hoodie",
+      "image": "https://api.napster.com/imageserver/v2/artists/Art.211160262/images/500x500.jpg"
+    }
+  ],
+  "type": "artists-list"
+}
+''';

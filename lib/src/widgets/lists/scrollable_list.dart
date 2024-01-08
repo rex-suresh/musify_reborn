@@ -11,7 +11,7 @@ class MainScrollableList extends StatelessWidget {
     required this.data,
     required this.widgetBuilder,
     required this.listTitle,
-    this.listHeight = 260,
+    this.listHeight = 240,
   });
 
   @override
