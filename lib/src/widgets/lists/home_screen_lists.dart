@@ -60,6 +60,7 @@ class TopAlbums extends StatelessWidget {
       data: albums,
       listTitle: "Top Albums",
       widgetBuilder: (item) => AlbumCard(item as Album),
+      listHeight: 240,
     );
   }
 }
@@ -78,7 +79,7 @@ class TopArtists extends StatelessWidget {
       data: albums,
       listTitle: "Top Artists",
       widgetBuilder: (item) => ArtistCard(item as Artist),
-      listHeight: 237,
+      listHeight: 200,
     );
   }
 }

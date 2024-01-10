@@ -52,21 +52,24 @@ class TitlePlusSub extends StatelessWidget {
 class CardTitle extends StatelessWidget {
   final String title;
   final double hPad;
+  final double vPad;
 
   const CardTitle({
     super.key,
     required this.title,
     this.hPad = 2,
+    this.vPad = 2,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: EdgeInsets.symmetric(horizontal: hPad),
-      title: Text(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: hPad, vertical: vPad),
+      child: Text(
         title,
         style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-        maxLines: 1,
+        textDirection: TextDirection.rtl,
+        maxLines: 2,
         overflow: TextOverflow.ellipsis,
       ),
     );

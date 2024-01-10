@@ -17,8 +17,10 @@ class AlbumCard extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       child: SizedBox(
         width: size,
-        child: Column(
+        child: Flex(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          direction: Axis.vertical,
           children: [
             Container(
               height: size,

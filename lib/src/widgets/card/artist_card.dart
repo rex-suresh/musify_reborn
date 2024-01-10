@@ -6,44 +6,38 @@ import '../images.dart';
 
 class ArtistCard extends StatelessWidget {
   final Artist artist;
-  static double size = 160;
-  static double spacing = 6;
+  static double size = 150;
+  static double gap = 4;
 
   const ArtistCard(this.artist, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      clipBehavior: Clip.antiAlias,
-      child: SizedBox(
-        width: size,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              height: size,
-              width: size,
-              margin: EdgeInsets.all(spacing),
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.red,
-                    blurRadius: spacing,
-                    blurStyle: BlurStyle.outer,
-                  )
-                ],
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: gap * 2),
+      padding: EdgeInsets.symmetric(horizontal: gap / 2),
+      width: size,
+      child: Flex(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        direction: Axis.vertical,
+        children: [
+          Container(
+            width: double.infinity,
+            height: size,
+            clipBehavior: Clip.hardEdge,
+            decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.transparent,
-              ),
-              child: ImageAvatar(imageUrl: artist.imageUrl),
-            ),
-            CardTitle(
-              title: artist.name,
-              hPad: spacing * 2,
-            ),
-          ],
-        ),
+                border: Border.all(color: Colors.grey, strokeAlign: 1),
+                backgroundBlendMode: BlendMode.color),
+            child: ImageAvatar(imageUrl: artist.imageUrl),
+          ),
+          CardTitle(
+            title: artist.name,
+            hPad: gap,
+          ),
+        ],
       ),
     );
   }

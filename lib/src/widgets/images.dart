@@ -47,7 +47,7 @@ class ImageAvatar extends StatelessWidget {
   const ImageAvatar({
     super.key,
     required this.imageUrl,
-    this.defaultImage = 'assets/images/default.jpeg',
+    this.defaultImage = 'assets/images/track.png',
   });
 
   @override
