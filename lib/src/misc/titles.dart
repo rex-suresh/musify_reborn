@@ -49,6 +49,43 @@ class TitlePlusSub extends StatelessWidget {
   }
 }
 
+class TitlePlusDescription extends StatelessWidget {
+  final String title;
+  final String description;
+  final double hPad;
+  final double vPad;
+
+  const TitlePlusDescription({
+    super.key,
+    required this.title,
+    required this.description,
+    this.hPad = 2,
+    this.vPad = 2,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      contentPadding: EdgeInsets.symmetric(horizontal: hPad, vertical: vPad),
+      title: Text(
+        title,
+        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+        textDirection: TextDirection.rtl,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ),
+      subtitle: Text(
+        description,
+        style: const TextStyle(fontSize: 10, color: Colors.white),
+        softWrap: true,
+        textDirection: TextDirection.rtl,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+      ),
+    );
+  }
+}
+
 class CardTitle extends StatelessWidget {
   final String title;
   final double hPad;

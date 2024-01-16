@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const List<Widget> screenContents = [
-      // TopPlaylists(),
+      TopPlaylists(),
       TopTracks(),
       TopAlbums(),
       TopArtists()

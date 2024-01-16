@@ -42,6 +42,7 @@ class TopPlaylists extends StatelessWidget {
       data: playlists,
       listTitle: "Top Playlists",
       widgetBuilder: (item) => PlaylistCard(item as Playlist),
+      listHeight: 240,
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:musify_reborn/src/misc/titles.dart';
 
-import '../images.dart';
+import '../../misc/titles.dart';
 import '../../models/models.dart';
+import '../images.dart';
 
 class TrackCard extends StatelessWidget {
   static double size = 160;

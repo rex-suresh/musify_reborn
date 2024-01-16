@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../misc/titles.dart';
 import '../../models/models.dart';
+import '../images.dart';
 
 class PlaylistCard extends StatelessWidget {
+  static double size = 240;
   final Playlist playlist;
 
   const PlaylistCard(this.playlist, {super.key});
@@ -11,20 +14,35 @@ class PlaylistCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       clipBehavior: Clip.hardEdge,
-      child: Column(
-        children: [
-          Image.network(
-            playlist.imageUrl,
-            width: 250,
-            height: 170,
-            fit: BoxFit.cover,
-          ),
-          ListTile(
-            title: Text(playlist.name),
-            subtitle: Text(playlist.description),
-            isThreeLine: true,
-          ),
-        ],
+      child: AspectRatio(
+        aspectRatio: 1,
+        child: Stack(
+          clipBehavior: Clip.hardEdge,
+          alignment: AlignmentDirectional.bottomEnd,
+          children: [
+            SizedBox(
+              width: size,
+              height: size,
+              child: ImageThumbnail(imageUrl: playlist.imageUrl),
+            ),
+            DecoratedBox(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black87,
+                      Colors.black,
+                    ],
+                  ),
+                ),
+                child: TitlePlusDescription(
+                  title: playlist.name,
+                  description: playlist.description,
+                  hPad: 8,
+                ))
+          ],
+        ),
       ),
     );
   }
