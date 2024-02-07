@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:musify_reborn/src/api/api.dart';
 
 import '../misc/titles.dart';
-import '../blocs/padded_body.dart';
+import '../misc/padded_body.dart';
 import '../widgets/lists/home_screen_lists.dart';
 
 class HomeScreen extends StatelessWidget {

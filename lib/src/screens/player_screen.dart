@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../misc/titles.dart';
-import '../blocs/padded_body.dart';
+import '../misc/padded_body.dart';
 
 class PlayerScreen extends StatelessWidget {
   const PlayerScreen({super.key});
