@@ -1,4 +1,8 @@
-class Track {
+abstract class DataParser {
+  DataParser.fromData(dynamic _data);
+}
+
+class Track implements DataParser {
   late String id;
   late String name;
   late String imageUrl;
@@ -18,7 +22,7 @@ class Track {
   }
 }
 
-class Album {
+class Album implements DataParser {
   late String id;
   late String name;
   late String artistName;
@@ -32,7 +36,7 @@ class Album {
   }
 }
 
-class Artist {
+class Artist implements DataParser {
   late String id;
   late String name;
   late String imageUrl;
@@ -44,7 +48,7 @@ class Artist {
   }
 }
 
-class Playlist {
+class Playlist implements DataParser {
   late String id;
   late String name;
   late String description;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MainScrollableList extends StatelessWidget {
   final String listTitle;
   final Widget Function(dynamic) widgetBuilder;
-  final Iterable<dynamic> data;
+  final List<dynamic> data;
   final double listHeight;
   static double gap = 12;
 
@@ -33,9 +33,12 @@ class MainScrollableList extends StatelessWidget {
         ),
         SizedBox(
           height: listHeight,
-          child: ListView(
+          child: ListView.builder(
+            // addAutomaticKeepAlives: true,
             scrollDirection: Axis.horizontal,
-            children: [...data.map(widgetBuilder)],
+            itemCount: data.length,
+            itemBuilder: (BuildContext context, int index) =>
+                widgetBuilder(data[index]),
           ),
         )
       ],
