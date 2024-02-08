@@ -21,7 +21,7 @@ class ImageThumbnail extends StatelessWidget {
         if (loadingProgress == null) return child;
 
         return Container(
-          color: Colors.black,
+          color: Colors.transparent,
           child: Center(
             heightFactor: 2,
             widthFactor: 2,
@@ -62,7 +62,7 @@ class ImageAvatar extends StatelessWidget {
         if (loadingProgress == null) return child;
 
         return Container(
-          color: Colors.black,
+          color: Colors.transparent,
           child: Center(
             heightFactor: 2,
             widthFactor: 2,

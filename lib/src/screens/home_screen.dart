@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:musify_reborn/src/api/api.dart';
 
 import '../misc/titles.dart';
 import '../misc/padded_body.dart';
@@ -15,7 +14,6 @@ class HomeScreen extends StatelessWidget {
       const TopTracks(),
       const TopAlbums(),
       const TopArtists(),
-      TesterText()
     ];
 
     return Scaffold(
@@ -35,33 +33,5 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class TesterText extends StatefulWidget {
-  const TesterText({super.key});
-
-  @override
-  State<TesterText> createState() => _TesterTextState();
-}
-
-class _TesterTextState extends State<TesterText> {
-  String content = 'Hello';
-
-  @override
-  void initState() {
-    super.initState();
-    API.base().then((value) {
-      if (context.mounted) {
-        setState(() {
-          content = value;
-        });
-      }
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(content);
   }
 }
