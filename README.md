@@ -1,3 +1,3 @@
 # musify_reborn
 
-Musify app written in flutter
+Musify (The Napster backed music app) written in flutter

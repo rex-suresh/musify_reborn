@@ -1,10 +1,8 @@
 import 'dart:async';
-import 'dart:convert' show jsonDecode;
 
 import 'package:musify_reborn/src/models/models.dart';
 
-Function jsonResultList =
-    (String eventData) => jsonDecode(eventData)['result'] as List<dynamic>;
+import '../api/utils.dart';
 
 class DataBloc {
   final _homePlaylists = StreamController<String>();

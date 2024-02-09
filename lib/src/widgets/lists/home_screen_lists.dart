@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../api/api.dart';
+import '../../resources/network_repository.dart';
 import '../../widgets/card/album_card.dart';
 import '../../widgets/card/artist_card.dart';
 import '../../widgets/card/playlist_card.dart';
@@ -17,7 +17,7 @@ class TopTracks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: API.homePageTrax(),
+      future: NetworkRepository.homePageTrax(),
       builder: (context, snapshot) {
         return MainScrollableList(
           data: dataListOf(snapshot),
@@ -36,7 +36,7 @@ class TopPlaylists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: API.homePagePlaylists(),
+      future: NetworkRepository.homePagePlaylists(),
       builder: (context, snapshot) {
         return MainScrollableList(
           data: dataListOf(snapshot),
@@ -55,7 +55,7 @@ class TopAlbums extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: API.homePageAlbums(),
+      future: NetworkRepository.homePageAlbums(),
       builder: (context, snapshot) {
         return MainScrollableList(
           data: dataListOf(snapshot),
@@ -74,7 +74,7 @@ class TopArtists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: API.homePageArtists(),
+      future: NetworkRepository.homePageArtists(),
       builder: (context, snapshot) {
         return MainScrollableList(
           data: dataListOf(snapshot),

@@ -1,5 +1,6 @@
 abstract class DataParser {
   DataParser.fromData(dynamic _data);
+  Map<String, dynamic> toJson();
 }
 
 class Track implements DataParser {
@@ -20,6 +21,17 @@ class Track implements DataParser {
     artistName = trackData['artist']['name'];
     albumName = trackData['album']['name'];
   }
+
+  @override
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'imageUrl': imageUrl,
+        'trackUrl': trackUrl,
+        'trackLength': trackLength,
+        'artistName': artistName,
+        'albumName': albumName,
+      };
 }
 
 class Album implements DataParser {
@@ -34,6 +46,14 @@ class Album implements DataParser {
     imageUrl = albumData['image'];
     artistName = albumData['artist']['name'];
   }
+
+  @override
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'imageUrl': imageUrl,
+        'artistName': artistName,
+      };
 }
 
 class Artist implements DataParser {
@@ -46,6 +66,13 @@ class Artist implements DataParser {
     name = artistData['name'];
     imageUrl = artistData['image'];
   }
+
+  @override
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'imageUrl': imageUrl,
+      };
 }
 
 class Playlist implements DataParser {
@@ -60,4 +87,12 @@ class Playlist implements DataParser {
     imageUrl = playlistData['image'];
     description = playlistData['description'];
   }
+
+  @override
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'imageUrl': imageUrl,
+        'description': description,
+      };
 }
