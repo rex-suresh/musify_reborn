@@ -10,6 +10,7 @@ class Musify extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(useMaterial3: true).copyWith(
         splashFactory: NoSplash.splashFactory,
+        hoverColor: null,
       ),
       home: const SafeArea(child: MainScreen()),
     );
