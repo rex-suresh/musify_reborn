@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class ImageThumbnail extends StatelessWidget {
   final String imageUrl;
@@ -77,6 +80,35 @@ class ImageAvatar extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class AlbumScreenImage extends StatelessWidget {
+  final String imageUrl;
+
+  const AlbumScreenImage({super.key, required this.imageUrl});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        ImageThumbnail(imageUrl: imageUrl),
+        BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Center(
+            child: FractionallySizedBox(
+              widthFactor: 0.8,
+              child: ClipRRect(
+                clipBehavior: Clip.hardEdge,
+                borderRadius: BorderRadius.circular(10),
+                child: ImageThumbnail(imageUrl: imageUrl),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

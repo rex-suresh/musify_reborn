@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../misc/titles.dart';
 import '../models/models.dart';
+import '../widgets/images.dart';
+import '../widgets/lists/other_screen_lists.dart';
 
 class AlbumScreen extends StatelessWidget {
   final Album album;
@@ -14,6 +16,16 @@ class AlbumScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: true,
         title: SubScreenTitle(title: album.name),
+        backgroundColor: Colors.transparent,
+      ),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          AlbumScreenImage(
+            imageUrl: album.imageUrl,
+          ),
+          const TracksDiscography()
+        ],
       ),
     );
   }
