@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../misc/titles.dart';
+import '../models/models.dart';
+
 class ArtistScreen extends StatelessWidget {
-  const ArtistScreen({super.key});
+  final Artist artist;
+
+  const ArtistScreen({super.key, required this.artist});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        title: SubScreenTitle(title: artist.name),
+      ),
+    );
   }
 }

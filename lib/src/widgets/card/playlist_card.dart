@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musify_reborn/src/screens/playlist_screen.dart';
 
 import '../../misc/titles.dart';
 import '../../models/models.dart';
@@ -12,36 +13,47 @@ class PlaylistCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      clipBehavior: Clip.hardEdge,
-      child: AspectRatio(
-        aspectRatio: 1,
-        child: Stack(
-          clipBehavior: Clip.hardEdge,
-          alignment: AlignmentDirectional.bottomEnd,
-          children: [
-            SizedBox(
-              width: size,
-              height: size,
-              child: ImageThumbnail(imageUrl: playlist.imageUrl),
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => PlaylistScreen(
+              playlist: playlist,
             ),
-            DecoratedBox(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    colors: [
-                      Colors.transparent,
-                      Colors.black87,
-                      Colors.black,
-                    ],
+          ),
+        );
+      },
+      child: Card(
+        clipBehavior: Clip.hardEdge,
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: Stack(
+            clipBehavior: Clip.hardEdge,
+            alignment: AlignmentDirectional.bottomEnd,
+            children: [
+              SizedBox(
+                width: size,
+                height: size,
+                child: ImageThumbnail(imageUrl: playlist.imageUrl),
+              ),
+              DecoratedBox(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black87,
+                        Colors.black,
+                      ],
+                    ),
                   ),
-                ),
-                child: TitlePlusDescription(
-                  title: playlist.name,
-                  description: playlist.description,
-                  hPad: 8,
-                ))
-          ],
+                  child: TitlePlusDescription(
+                    title: playlist.name,
+                    description: playlist.description,
+                    hPad: 8,
+                  ))
+            ],
+          ),
         ),
       ),
     );
