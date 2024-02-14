@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musify_reborn/src/misc/titles.dart';
 
 class MainScrollableList extends StatelessWidget {
   final String listTitle;
@@ -23,12 +24,8 @@ class MainScrollableList extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(horizontal: gap),
           margin: EdgeInsets.symmetric(vertical: gap),
-          child: Text(
-            listTitle,
-            style: const TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 18,
-            ),
+          child: SubScreenTitle(
+            title: listTitle,
           ),
         ),
         SizedBox(

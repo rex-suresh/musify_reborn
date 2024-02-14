@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ArtistCard extends StatelessWidget {
-  const ArtistCard({super.key});
+class ArtistScreen extends StatelessWidget {
+  const ArtistScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
-class AlbumCard extends StatelessWidget {
-  const AlbumCard({super.key});
+import '../misc/titles.dart';
+import '../models/models.dart';
+
+class AlbumScreen extends StatelessWidget {
+  final Album album;
+
+  const AlbumScreen({super.key, required this.album});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        title: SubScreenTitle(title: album.name),
+      ),
+    );
   }
 }
