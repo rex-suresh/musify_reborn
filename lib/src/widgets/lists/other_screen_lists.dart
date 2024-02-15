@@ -16,7 +16,7 @@ class AlbumTrackDiscography extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: NetworkRepository.homePageTrax(),
+      future: NetworkRepository.albumTracks(albumId),
       builder: (context, snapshot) {
         return CrossList(
           data: dataListOf(snapshot),

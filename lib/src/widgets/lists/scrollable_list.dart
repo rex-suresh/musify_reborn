@@ -67,7 +67,7 @@ class UnScrollableList extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: gap),
+            padding: EdgeInsets.symmetric(horizontal: gap * 2),
             margin: EdgeInsets.symmetric(vertical: gap),
             child: SubScreenTitle(
               title: listTitle,
