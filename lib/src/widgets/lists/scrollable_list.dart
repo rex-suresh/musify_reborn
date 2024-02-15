@@ -73,15 +73,12 @@ class UnScrollableList extends StatelessWidget {
               title: listTitle,
             ),
           ),
-          SizedBox(
-            height: 300,
-            child: ListView(
-              children: [
-                ...data.map((item) {
-                  return widgetBuilder(item);
-                })
-              ],
-            ),
+          Column(
+            children: [
+              ...data.map((item) {
+                return widgetBuilder(item);
+              })
+            ],
           )
         ]);
   }
