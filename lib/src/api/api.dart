@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:musify_reborn/src/api/utils.dart';
 
+import '../api/utils.dart';
 import '../models/models.dart';
 import 'routes.dart';
 
@@ -42,5 +42,11 @@ class API {
     final data = await _get(RequestRoutes.homeArtists);
 
     return jsonResultList(data).map((item) => Artist.fromData(item));
+  }
+
+  static Future<Iterable<Track>> albumTracks(albumId) async {
+    final data = await _get(albumTracksRoute(albumId));
+
+    return jsonResultList(data).map((item) => Track.fromData(item));
   }
 }

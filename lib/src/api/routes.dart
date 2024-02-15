@@ -21,3 +21,6 @@ class RequestRoutes {
   // Search page specific routes
   static Uri searchBase = Uri.parse("${base.toString()}/search");
 }
+
+Uri albumTracksRoute(String albumId) =>
+    Uri.parse("${RequestRoutes.albumDetailBase.toString()}/$albumId");

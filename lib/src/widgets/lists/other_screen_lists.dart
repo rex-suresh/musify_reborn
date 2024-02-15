@@ -8,17 +8,19 @@ import 'scrollable_list.dart';
 dataListOf(AsyncSnapshot<dynamic> snapshot) =>
     (snapshot.hasData ? snapshot.data : []) as Iterable;
 
-class TracksDiscography extends StatelessWidget {
-  const TracksDiscography({super.key});
+class AlbumTrackDiscography extends StatelessWidget {
+  final String albumId;
+
+  const AlbumTrackDiscography({super.key, required this.albumId});
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: NetworkRepository.homePageTrax(),
+      future: NetworkRepository.albumTracks(albumId),
       builder: (context, snapshot) {
-        return CrossScrollableList(
+        return CrossList(
           data: dataListOf(snapshot),
-          listTitle: "Discography",
+          listTitle: "Tracks",
           widgetBuilder: (item) => TrackCardCompact(item as Track),
         );
       },

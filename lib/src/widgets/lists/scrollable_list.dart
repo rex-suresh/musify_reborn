@@ -62,28 +62,28 @@ class UnScrollableList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: gap),
-          margin: EdgeInsets.symmetric(vertical: gap),
-          child: SubScreenTitle(
-            title: listTitle,
+    return Flex(
+        direction: Axis.vertical,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: gap),
+            margin: EdgeInsets.symmetric(vertical: gap),
+            child: SubScreenTitle(
+              title: listTitle,
+            ),
           ),
-        ),
-        SizedBox(
-          child: ListView.builder(
-            physics: AlwaysScrollableScrollPhysics(),
-            addAutomaticKeepAlives: true,
-            scrollDirection: scrollDirection,
-            itemCount: data.length,
-            itemBuilder: (BuildContext context, int index) =>
-                widgetBuilder(data.elementAt(index)),
-          ),
-        )
-      ],
-    );
+          SizedBox(
+            height: 300,
+            child: ListView(
+              children: [
+                ...data.map((item) {
+                  return widgetBuilder(item);
+                })
+              ],
+            ),
+          )
+        ]);
   }
 }
 

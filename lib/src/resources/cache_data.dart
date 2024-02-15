@@ -37,6 +37,8 @@ class CacheData {
   static Future<Iterable<Artist>?> homePageArtists() =>
       _queryAndParse('homePageArtists');
 
+  static Future<Iterable<Track>?> albumTracks(key) => _queryAndParse(key);
+
   static Future<void> storeHomePageTrax(data) =>
       _stringifyAndStore('homePageTrax', data);
   static Future<void> storeHomePageAlbums(data) =>
@@ -45,4 +47,6 @@ class CacheData {
       _stringifyAndStore('homePagePlaylists', data);
   static Future<void> storeHomePageArtists(data) =>
       _stringifyAndStore('homePageArtists', data);
+  static Future<void> storeAlbumTracks(key, data) =>
+      _stringifyAndStore(key, data);
 }

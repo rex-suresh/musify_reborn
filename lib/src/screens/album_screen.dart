@@ -24,7 +24,9 @@ class AlbumScreen extends StatelessWidget {
           AlbumScreenImage(
             imageUrl: album.imageUrl,
           ),
-          const TracksDiscography()
+          AlbumTrackDiscography(
+            albumId: album.id,
+          )
         ],
       ),
     );
