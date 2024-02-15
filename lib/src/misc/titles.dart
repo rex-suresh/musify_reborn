@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-SliverAppBar Function(String title) screenTitle = (String title) {
+SliverAppBar screenTitle(String title) {
   var textStyle = const TextStyle(
     color: Colors.white,
     fontSize: 32,
@@ -15,7 +15,15 @@ SliverAppBar Function(String title) screenTitle = (String title) {
     foregroundColor: Colors.transparent,
     backgroundColor: Colors.transparent,
   );
-};
+}
+
+SliverAppBar subScreenTitleOf(String title) {
+  return SliverAppBar(
+    title: SubScreenTitle(title: title),
+    backgroundColor: Colors.transparent,
+    floating: true,
+  );
+}
 
 class TitlePlusSub extends StatelessWidget {
   final String title;

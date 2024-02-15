@@ -12,22 +12,29 @@ class AlbumScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-        title: SubScreenTitle(title: album.name),
-        backgroundColor: Colors.transparent,
+    final screenContents = [
+      AlbumScreenImage(
+        imageUrl: album.imageUrl,
       ),
-      body: ListView(
-        scrollDirection: Axis.vertical,
-        children: [
-          AlbumScreenImage(
-            imageUrl: album.imageUrl,
-          ),
-          AlbumTrackDiscography(
-            albumId: album.id,
-          )
-        ],
+      AlbumTrackDiscography(
+        albumId: album.id,
+      )
+    ];
+
+    return SafeArea(
+      child: Scaffold(
+        body: CustomScrollView(
+          slivers: [
+            subScreenTitleOf(album.name),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) => screenContents[index],
+                childCount: screenContents.length,
+              ),
+            ),
+          ],
+          scrollDirection: Axis.vertical,
+        ),
       ),
     );
   }
