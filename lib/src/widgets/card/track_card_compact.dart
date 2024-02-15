@@ -10,7 +10,17 @@ class TrackCardCompact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return Card(
+      child: ListTile(
+        leading: SizedBox(
+          height: 50,
+          width: 50,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            clipBehavior: Clip.hardEdge,
+            child: ImageThumbnail(imageUrl: track.imageUrl),
+          ),
+        ),
         title: Text(
           track.name,
           maxLines: 2,
@@ -21,10 +31,7 @@ class TrackCardCompact extends StatelessWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
-        leading: SizedBox(
-          height: 80,
-          width: 80,
-          child: ImageThumbnail(imageUrl: track.imageUrl),
-        ));
+      ),
+    );
   }
 }
