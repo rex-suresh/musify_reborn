@@ -27,3 +27,23 @@ class AlbumTrackDiscography extends StatelessWidget {
     );
   }
 }
+
+class PlaylistTrackDiscography extends StatelessWidget {
+  final String playlistId;
+
+  const PlaylistTrackDiscography({super.key, required this.playlistId});
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: NetworkRepository.playlistTracks(playlistId),
+      builder: (context, snapshot) {
+        return CrossList(
+          data: dataListOf(snapshot),
+          listTitle: "Tracks",
+          widgetBuilder: (item) => TrackCardCompact(item as Track),
+        );
+      },
+    );
+  }
+}

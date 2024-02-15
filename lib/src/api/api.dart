@@ -49,4 +49,10 @@ class API {
 
     return jsonResultList(data).map((item) => Track.fromData(item));
   }
+
+  static Future<Iterable<Track>> playlistTracks(playlistId) async {
+    final data = await _get(playlistTracksRoute(playlistId));
+
+    return jsonResultList(data).map((item) => Track.fromData(item));
+  }
 }

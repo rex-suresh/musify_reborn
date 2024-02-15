@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:musify_reborn/src/screens/playlist_screen.dart';
 
 import '../../misc/titles.dart';
 import '../../models/models.dart';
+import '../../screens/playlist_screen.dart';
 import '../images.dart';
 
 class PlaylistCard extends StatelessWidget {

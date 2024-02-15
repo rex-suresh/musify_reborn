@@ -60,4 +60,12 @@ class NetworkRepository {
       (data) => CacheData.storeAlbumTracks(albumId, data),
     );
   }
+
+  static Future<Iterable<Track>> playlistTracks(playlistId) async {
+    return await _fetchBackupStore<Iterable<Track>>(
+      () => {},
+      () => API.playlistTracks(playlistId),
+      (data) => {},
+    );
+  }
 }

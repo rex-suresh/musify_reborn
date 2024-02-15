@@ -24,3 +24,6 @@ class RequestRoutes {
 
 Uri albumTracksRoute(String albumId) =>
     Uri.parse("${RequestRoutes.albumDetailBase.toString()}/$albumId");
+
+Uri playlistTracksRoute(String playlistId) =>
+    Uri.parse("${RequestRoutes.playlistDetailBase.toString()}/$playlistId");

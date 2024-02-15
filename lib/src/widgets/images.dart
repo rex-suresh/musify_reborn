@@ -112,3 +112,28 @@ class AlbumScreenImage extends StatelessWidget {
     );
   }
 }
+
+class PlaylistScreenImage extends StatelessWidget {
+  final String imageUrl;
+
+  const PlaylistScreenImage({super.key, required this.imageUrl});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        backgroundBlendMode: BlendMode.color,
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          colors: [
+            Colors.white,
+            Colors.black,
+          ],
+        ),
+      ),
+      clipBehavior: Clip.hardEdge,
+      padding: const EdgeInsets.all(4),
+      child: ImageThumbnail(imageUrl: imageUrl),
+    );
+  }
+}
