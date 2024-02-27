@@ -142,22 +142,25 @@ class CrossList extends StatelessWidget {
   final String listTitle;
   final Widget Function(dynamic) widgetBuilder;
   final Iterable<dynamic> data;
-  static double gap = 12;
+  final double gap;
 
-  const CrossList({
-    super.key,
-    required this.data,
-    required this.widgetBuilder,
-    required this.listTitle,
-  });
+  const CrossList(
+      {super.key,
+      required this.data,
+      required this.widgetBuilder,
+      required this.listTitle,
+      this.gap = 12});
 
   @override
   Widget build(BuildContext context) {
-    return UnScrollableList(
-      data: data,
-      widgetBuilder: widgetBuilder,
-      listTitle: listTitle,
-      scrollDirection: Axis.vertical,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: gap),
+      child: UnScrollableList(
+        data: data,
+        widgetBuilder: widgetBuilder,
+        listTitle: listTitle,
+        scrollDirection: Axis.vertical,
+      ),
     );
   }
 }

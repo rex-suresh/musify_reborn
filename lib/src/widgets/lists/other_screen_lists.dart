@@ -42,6 +42,7 @@ class PlaylistTrackDiscography extends StatelessWidget {
           data: dataListOf(snapshot),
           listTitle: "Tracks",
           widgetBuilder: (item) => TrackCardCompact(item as Track),
+          gap: 8,
         );
       },
     );

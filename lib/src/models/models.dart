@@ -1,5 +1,5 @@
 abstract class DataParser {
-  DataParser.fromData(dynamic _data);
+  DataParser.fromData(dynamic data);
   Map<String, dynamic> toJson();
 }
 

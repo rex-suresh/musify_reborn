@@ -26,11 +26,8 @@ class PlaylistScreen extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             subScreenTitleOf(playlist.name),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) => screenContents[index],
-                childCount: screenContents.length,
-              ),
+            SliverList.list(
+              children: screenContents,
             ),
           ],
           scrollDirection: Axis.vertical,

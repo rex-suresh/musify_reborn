@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class ImageThumbnail extends StatelessWidget {
   final String imageUrl;
@@ -121,18 +120,11 @@ class PlaylistScreenImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        backgroundBlendMode: BlendMode.color,
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          colors: [
-            Colors.white,
-            Colors.black,
-          ],
-        ),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
       ),
-      clipBehavior: Clip.hardEdge,
-      padding: const EdgeInsets.all(4),
+      clipBehavior: Clip.antiAlias,
       child: ImageThumbnail(imageUrl: imageUrl),
     );
   }

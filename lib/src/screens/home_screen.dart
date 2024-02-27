@@ -22,11 +22,10 @@ class HomeScreen extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             screenTitle("Home"),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) => screenContents[index],
-                childCount: screenContents.length,
-              ),
+            SliverList.list(
+              addAutomaticKeepAlives: true,
+              addRepaintBoundaries: true,
+              children: screenContents,
             ),
           ],
           scrollDirection: Axis.vertical,
