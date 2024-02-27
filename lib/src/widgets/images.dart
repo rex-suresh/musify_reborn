@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../misc/titles.dart';
+
 class ImageThumbnail extends StatelessWidget {
   final String imageUrl;
   final String defaultImage;
@@ -126,6 +128,35 @@ class PlaylistScreenImage extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       child: ImageThumbnail(imageUrl: imageUrl),
+    );
+  }
+}
+
+class ArtistScreenImage extends StatelessWidget {
+  final String imageUrl;
+  final String figureText;
+
+  const ArtistScreenImage({
+    super.key,
+    required this.imageUrl,
+    required this.figureText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Stack(
+        alignment: Alignment.bottomRight,
+        children: [
+          ImageThumbnail(imageUrl: imageUrl),
+          ClippedStyleTitle(titleText: figureText),
+        ],
+      ),
     );
   }
 }

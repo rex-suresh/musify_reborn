@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../misc/titles.dart';
-import '../misc/padded_body.dart';
 import '../widgets/lists/home_screen_lists.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,19 +16,16 @@ class HomeScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      body: PaddedBody(
-        hPad: 8,
-        child: CustomScrollView(
-          slivers: [
-            screenTitle("Home"),
-            SliverList.list(
-              addAutomaticKeepAlives: true,
-              addRepaintBoundaries: true,
-              children: screenContents,
-            ),
-          ],
-          scrollDirection: Axis.vertical,
-        ),
+      body: CustomScrollView(
+        slivers: [
+          screenTitle("Home"),
+          SliverList.list(
+            addAutomaticKeepAlives: true,
+            addRepaintBoundaries: true,
+            children: screenContents,
+          ),
+        ],
+        scrollDirection: Axis.vertical,
       ),
     );
   }

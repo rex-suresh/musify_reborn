@@ -55,4 +55,16 @@ class API {
 
     return jsonResultList(data).map((item) => Track.fromData(item));
   }
+
+  static Future<Iterable<Track>> artistTracks(artistId) async {
+    final data = await _get(artistTracksRoute(artistId));
+
+    return jsonResultList(data).map((item) => Track.fromData(item));
+  }
+
+  static Future<Iterable<Album>> artistAlbums(artistId) async {
+    final data = await _get(artistAlbumsRoute(artistId));
+
+    return jsonResultList(data).map((item) => Album.fromData(item));
+  }
 }

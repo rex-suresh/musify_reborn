@@ -140,3 +140,32 @@ class SubScreenTitle extends StatelessWidget {
     );
   }
 }
+
+class ClippedStyleTitle extends StatelessWidget {
+  final String titleText;
+
+  const ClippedStyleTitle({
+    super.key,
+    required this.titleText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+      child: Text(
+        titleText,
+        style: TextStyle(
+          color: Theme.of(context).canvasColor,
+          fontFamily: 'Monospace',
+          fontWeight: FontWeight.w900,
+          fontSize: 24,
+          shadows: const [
+            Shadow(color: Colors.white, blurRadius: 1, offset: Offset(-1, -1)),
+          ],
+        ),
+        maxLines: 2,
+      ),
+    );
+  }
+}

@@ -68,4 +68,20 @@ class NetworkRepository {
       (data) => {},
     );
   }
+
+  static Future<Iterable<Track>> artistTracks(artistId) async {
+    return await _fetchBackupStore<Iterable<Track>>(
+      () => {},
+      () => API.artistTracks(artistId),
+      (data) => {},
+    );
+  }
+
+  static Future<Iterable<Album>> artistAlbums(artistId) async {
+    return await _fetchBackupStore<Iterable<Album>>(
+      () => {},
+      () => API.artistAlbums(artistId),
+      (data) => {},
+    );
+  }
 }

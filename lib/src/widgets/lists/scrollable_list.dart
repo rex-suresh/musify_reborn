@@ -67,8 +67,7 @@ class UnScrollableList extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: gap * 2),
-            margin: EdgeInsets.symmetric(vertical: gap),
+            padding: EdgeInsets.all(gap),
             child: SubScreenTitle(
               title: listTitle,
             ),
@@ -89,7 +88,7 @@ class MainScrollableList extends StatelessWidget {
   final Widget Function(dynamic) widgetBuilder;
   final Iterable<dynamic> data;
   final double listHeight;
-  static double gap = 12;
+  final double gap;
 
   const MainScrollableList({
     super.key,
@@ -97,16 +96,20 @@ class MainScrollableList extends StatelessWidget {
     required this.widgetBuilder,
     required this.listTitle,
     this.listHeight = 260,
+    this.gap = 12,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ScrollableList(
-      data: data,
-      widgetBuilder: widgetBuilder,
-      listTitle: listTitle,
-      listHeight: listHeight,
-      scrollDirection: Axis.horizontal,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: gap),
+      child: ScrollableList(
+        data: data,
+        widgetBuilder: widgetBuilder,
+        listTitle: listTitle,
+        listHeight: listHeight,
+        scrollDirection: Axis.horizontal,
+      ),
     );
   }
 }

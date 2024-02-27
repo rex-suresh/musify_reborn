@@ -27,3 +27,9 @@ Uri albumTracksRoute(String albumId) =>
 
 Uri playlistTracksRoute(String playlistId) =>
     Uri.parse("${RequestRoutes.playlistDetailBase.toString()}/$playlistId");
+
+Uri artistTracksRoute(String artistId) =>
+    Uri.parse("${RequestRoutes.artistTracksBase.toString()}/$artistId");
+
+Uri artistAlbumsRoute(String artistId) =>
+    Uri.parse("${RequestRoutes.artistAlbumBase.toString()}/$artistId");

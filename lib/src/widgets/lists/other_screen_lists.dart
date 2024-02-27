@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/models.dart';
 import '../../resources/network_repository.dart';
+import '../card/album_card.dart';
 import '../card/track_card_compact.dart';
 import 'scrollable_list.dart';
 
@@ -42,6 +43,49 @@ class PlaylistTrackDiscography extends StatelessWidget {
           data: dataListOf(snapshot),
           listTitle: "Tracks",
           widgetBuilder: (item) => TrackCardCompact(item as Track),
+          gap: 8,
+        );
+      },
+    );
+  }
+}
+
+class ArtistTrackDiscography extends StatelessWidget {
+  final String artistId;
+
+  const ArtistTrackDiscography({super.key, required this.artistId});
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: NetworkRepository.artistTracks(artistId),
+      builder: (context, snapshot) {
+        return CrossList(
+          data: dataListOf(snapshot),
+          listTitle: "Discography",
+          widgetBuilder: (item) => TrackCardCompact(item as Track),
+          gap: 8,
+        );
+      },
+    );
+  }
+}
+
+class ArtistAlbumDiscography extends StatelessWidget {
+  final String artistId;
+
+  const ArtistAlbumDiscography({super.key, required this.artistId});
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: NetworkRepository.artistAlbums(artistId),
+      builder: (context, snapshot) {
+        return MainScrollableList(
+          data: dataListOf(snapshot),
+          listTitle: "Top Records",
+          widgetBuilder: (item) => AlbumCard(item as Album),
+          listHeight: 240,
           gap: 8,
         );
       },
