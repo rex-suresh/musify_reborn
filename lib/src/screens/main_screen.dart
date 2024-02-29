@@ -9,14 +9,18 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: DefaultTabController(
         length: 3,
         child: Scaffold(
           body: TabBarView(
-            children: [HomeScreen(), SearchScreen(), PlayerScreen()],
+            children: [
+              const HomeScreen(),
+              const SearchScreen(),
+              PlayerScreen()
+            ],
           ),
-          bottomNavigationBar: TabBar(
+          bottomNavigationBar: const TabBar(
             tabs: [
               Tab(text: 'Home', icon: Icon(Icons.home_rounded)),
               Tab(text: 'Search', icon: Icon(Icons.search_rounded)),

@@ -160,3 +160,32 @@ class ArtistScreenImage extends StatelessWidget {
     );
   }
 }
+
+class PlayerScreenImage extends StatelessWidget {
+  final String imageUrl;
+
+  const PlayerScreenImage({super.key, required this.imageUrl});
+
+  @override
+  Widget build(BuildContext context) {
+    return FractionallySizedBox(
+      alignment: Alignment.topCenter,
+      widthFactor: 0.8,
+      child: Container(
+        margin: const EdgeInsets.all(16),
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.white,
+              blurRadius: 10,
+              blurStyle: BlurStyle.outer,
+            ),
+          ],
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: ImageThumbnail(imageUrl: imageUrl),
+      ),
+    );
+  }
+}
