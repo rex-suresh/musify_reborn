@@ -22,3 +22,18 @@ class IconActiveOf extends StatelessWidget {
     );
   }
 }
+
+class PlayerControlIcons extends StatelessWidget {
+  final IconData icon;
+  final double size;
+  const PlayerControlIcons(this.icon, {super.key, this.size = 30});
+
+  @override
+  Widget build(BuildContext context) {
+    return Icon(
+      icon,
+      size: size,
+      color: Colors.white,
+    );
+  }
+}

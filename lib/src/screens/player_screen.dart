@@ -1,9 +1,10 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:just_audio/just_audio.dart';
 
 import '../misc/titles.dart';
 import '../widgets/images.dart';
+import '../widgets/player_controls.dart';
 
 class PlayerScreen extends StatelessWidget {
   final _player = AudioPlayer();
@@ -25,19 +26,18 @@ class PlayerScreen extends StatelessWidget {
           ),
           SliverList.list(
             addAutomaticKeepAlives: true,
-            addRepaintBoundaries: true,
-            children: const [
-              PlayerScreenImage(
+            children: [
+              const PlayerScreenImage(
                 // Just a hardcoded image to create UI
                 imageUrl:
                     'https://api.napster.com/imageserver/v2/albums/alb.318336993/images/500x500.jpg',
               ),
-              TrackTitlePlusSub(
+              const TrackTitlePlusSub(
                 subTitle: 'Artist name',
                 title: 'Welcome To The Jungle',
                 hPad: 40,
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: ProgressBar(
                   progress: Duration(seconds: 10),
@@ -53,7 +53,8 @@ class PlayerScreen extends StatelessWidget {
                   ),
                   timeLabelType: TimeLabelType.remainingTime,
                 ),
-              )
+              ),
+              PlayerControls(_player)
             ],
           ),
         ],
