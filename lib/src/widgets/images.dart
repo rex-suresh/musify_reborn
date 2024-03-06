@@ -1,8 +1,10 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../misc/titles.dart';
+import '../models/models.dart';
+import '../models/player_queue.dart';
 
 class ImageThumbnail extends StatelessWidget {
   final String imageUrl;
@@ -164,7 +166,10 @@ class ArtistScreenImage extends StatelessWidget {
 class PlayerScreenImage extends StatelessWidget {
   final String imageUrl;
 
-  const PlayerScreenImage({super.key, required this.imageUrl});
+  const PlayerScreenImage({
+    super.key,
+    this.imageUrl = 'https://picsum.photos/500/500',
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -183,23 +188,35 @@ class PlayerScreenImage extends StatelessWidget {
   }
 }
 
-class PlayerScreenFigure extends StatelessWidget {
-  final String imageUrl;
-  final String subTitle;
-  final String title;
+class PlayerScreenFigure extends StatefulWidget {
+  const PlayerScreenFigure({super.key});
 
-  const PlayerScreenFigure({
-    super.key,
-    required this.imageUrl,
-    required this.subTitle,
-    required this.title,
-  });
+  @override
+  State<PlayerScreenFigure> createState() => _PlayerScreenFigureState();
+}
+
+class _PlayerScreenFigureState extends State<PlayerScreenFigure> {
+  late Track track;
+
+  @override
+  void initState() {
+    final queue = Provider.of<PlayerQueue>(context, listen: true);
+    setState(() {
+      track = queue.currentTrack;
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      PlayerScreenImage(imageUrl: imageUrl),
-      TrackTitlePlusSub(title: title, subTitle: subTitle, hPad: 40),
+      PlayerScreenImage(imageUrl: track.imageUrl),
+      TrackTitlePlusSub(
+        title: track.name,
+        subTitle: track.artistName,
+        hPad: 40,
+      ),
     ]);
   }
 }

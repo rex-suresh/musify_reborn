@@ -7,9 +7,6 @@ import '../widgets/player/track_progress.dart';
 
 class PlayerScreen extends StatelessWidget {
   final _player = AudioPlayer();
-  final trackImage = 'https://picsum.photos/500/500';
-  final subTitle = 'Artist name';
-  final title = 'Welcome To The Jungle';
 
   PlayerScreen({super.key});
 
@@ -20,20 +17,14 @@ class PlayerScreen extends StatelessWidget {
         slivers: [
           SliverAppBar(
             leading: IconButton(
-              onPressed: () {
-                // trigger something that lets screen switch to home page
-              },
+              onPressed: () {},
               icon: const Icon(Icons.keyboard_arrow_down_rounded),
             ),
           ),
           SliverList.list(
             addAutomaticKeepAlives: true,
             children: [
-              PlayerScreenFigure(
-                imageUrl: trackImage,
-                subTitle: subTitle,
-                title: title,
-              ),
+              const PlayerScreenFigure(),
               const TrackProgress(),
               PlayerControls(_player),
               const QueueListControl(),
