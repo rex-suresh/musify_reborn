@@ -3,7 +3,7 @@ import 'package:just_audio/just_audio.dart';
 
 import '../widgets/images.dart';
 import '../widgets/player/player_controls.dart';
-import '../widgets/track_progress.dart';
+import '../widgets/player/track_progress.dart';
 
 class PlayerScreen extends StatelessWidget {
   final _player = AudioPlayer();
@@ -35,7 +35,8 @@ class PlayerScreen extends StatelessWidget {
                 title: title,
               ),
               const TrackProgress(),
-              PlayerControls(_player)
+              PlayerControls(_player),
+              const QueueListControl(),
             ],
           ),
         ],

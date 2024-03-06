@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
 import '../../misc/icon.dart';
+import '../../misc/titles.dart';
 
 class PlayerControls extends StatelessWidget {
   final AudioPlayer player;
@@ -40,6 +41,34 @@ class PlayerControls extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class QueueListControl extends StatelessWidget {
+  const QueueListControl({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return OverflowBar(
+      alignment: MainAxisAlignment.end,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: TextButton.icon(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.format_list_bulleted_rounded,
+              size: 15,
+            ),
+            label: const Text('Queue', style: inActiveTextXSmall),
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all(const EdgeInsets.all(15)),
+              iconColor: MaterialStateProperty.all(Colors.red),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
