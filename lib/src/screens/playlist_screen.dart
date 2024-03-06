@@ -4,6 +4,7 @@ import '../misc/titles.dart';
 import '../models/models.dart';
 import '../widgets/images.dart';
 import '../widgets/lists/other_screen_lists.dart';
+import '../widgets/player/queue_controls.dart';
 
 class PlaylistScreen extends StatelessWidget {
   final Playlist playlist;
@@ -16,6 +17,7 @@ class PlaylistScreen extends StatelessWidget {
       PlaylistScreenImage(
         imageUrl: playlist.imageUrl,
       ),
+      const QueueControlsTwin(),
       PlaylistTrackDiscography(
         playlistId: playlist.id,
       )

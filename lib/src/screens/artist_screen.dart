@@ -4,6 +4,7 @@ import '../misc/titles.dart';
 import '../models/models.dart';
 import '../widgets/images.dart';
 import '../widgets/lists/other_screen_lists.dart';
+import '../widgets/player/queue_controls.dart';
 
 class ArtistScreen extends StatelessWidget {
   final Artist artist;
@@ -22,6 +23,7 @@ class ArtistScreen extends StatelessWidget {
                 imageUrl: artist.imageUrl,
                 figureText: artist.name,
               ),
+              const QueueControlsSingle(),
               ArtistTrackDiscography(artistId: artist.id),
               ArtistAlbumDiscography(artistId: artist.id),
             ])

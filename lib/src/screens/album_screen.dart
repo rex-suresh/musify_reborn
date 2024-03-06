@@ -4,6 +4,7 @@ import '../misc/titles.dart';
 import '../models/models.dart';
 import '../widgets/images.dart';
 import '../widgets/lists/other_screen_lists.dart';
+import '../widgets/player/queue_controls.dart';
 
 class AlbumScreen extends StatelessWidget {
   final Album album;
@@ -16,6 +17,7 @@ class AlbumScreen extends StatelessWidget {
       AlbumScreenImage(
         imageUrl: album.imageUrl,
       ),
+      const QueueControlsTwin(),
       AlbumTrackDiscography(
         albumId: album.id,
       )

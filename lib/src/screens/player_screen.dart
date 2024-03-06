@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
 import '../widgets/images.dart';
-import '../widgets/player_controls.dart';
+import '../widgets/player/player_controls.dart';
 import '../widgets/track_progress.dart';
 
 class PlayerScreen extends StatelessWidget {

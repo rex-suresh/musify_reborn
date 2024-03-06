@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
-import '../misc/icon.dart';
+import '../../misc/icon.dart';
 
 class PlayerControls extends StatelessWidget {
   final AudioPlayer player;
