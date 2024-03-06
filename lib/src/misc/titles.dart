@@ -199,8 +199,8 @@ class TrackTitlePlusSub extends StatelessWidget {
 
   const TrackTitlePlusSub({
     super.key,
-    required this.title,
-    required this.subTitle,
+    this.title = '',
+    this.subTitle = '',
     this.hPad = 2,
   });
 

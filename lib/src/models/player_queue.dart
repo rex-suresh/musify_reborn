@@ -1,11 +1,13 @@
 import 'dart:collection';
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 
 import 'models.dart';
 
 class PlayerQueue extends ChangeNotifier {
   static int currentIndex = 0;
   final List<Track> _queue = [];
+  final AudioPlayer player = AudioPlayer();
 
   void addAll(List<Track> trackList) {
     _queue.addAll(trackList);
@@ -38,7 +40,7 @@ class PlayerQueue extends ChangeNotifier {
     return UnmodifiableListView(_queue);
   }
 
-  Track get currentTrack {
-    return _queue.elementAt(currentIndex);
+  Track? get currentTrack {
+    return _queue.length > currentIndex ? _queue.elementAt(currentIndex) : null;
   }
 }

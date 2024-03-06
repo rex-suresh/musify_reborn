@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart';
+import 'package:provider/provider.dart';
 
+import '../models/player_queue.dart';
 import '../widgets/images.dart';
 import '../widgets/player/player_controls.dart';
 import '../widgets/player/track_progress.dart';
 
 class PlayerScreen extends StatelessWidget {
-  final _player = AudioPlayer();
-
-  PlayerScreen({super.key});
+  const PlayerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final queue = Provider.of<PlayerQueue>(context, listen: true);
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -24,9 +25,9 @@ class PlayerScreen extends StatelessWidget {
           SliverList.list(
             addAutomaticKeepAlives: true,
             children: [
-              const PlayerScreenFigure(),
-              const TrackProgress(),
-              PlayerControls(_player),
+              PlayerScreenFigure(queue.currentTrack),
+              TrackProgress(queue.player),
+              PlayerControls(queue.player),
               const QueueListControl(),
             ],
           ),

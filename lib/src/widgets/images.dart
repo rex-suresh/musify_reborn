@@ -168,7 +168,7 @@ class PlayerScreenImage extends StatelessWidget {
 
   const PlayerScreenImage({
     super.key,
-    this.imageUrl = 'https://picsum.photos/500/500',
+    required this.imageUrl,
   });
 
   @override
@@ -177,7 +177,7 @@ class PlayerScreenImage extends StatelessWidget {
       alignment: Alignment.topCenter,
       widthFactor: 0.8,
       child: Container(
-        margin: const EdgeInsets.all(16),
+        margin: const EdgeInsets.symmetric(horizontal: 16),
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
         ),
@@ -188,35 +188,26 @@ class PlayerScreenImage extends StatelessWidget {
   }
 }
 
-class PlayerScreenFigure extends StatefulWidget {
-  const PlayerScreenFigure({super.key});
+class PlayerScreenFigure extends StatelessWidget {
+  final String defaultImageSource = 'https://picsum.photos/500/500';
+  final Track? track;
 
-  @override
-  State<PlayerScreenFigure> createState() => _PlayerScreenFigureState();
-}
-
-class _PlayerScreenFigureState extends State<PlayerScreenFigure> {
-  late Track track;
-
-  @override
-  void initState() {
-    final queue = Provider.of<PlayerQueue>(context, listen: true);
-    setState(() {
-      track = queue.currentTrack;
-    });
-
-    super.initState();
-  }
+  const PlayerScreenFigure(this.track, {super.key});
 
   @override
   Widget build(BuildContext context) {
+    final trackExist = track != null;
+
     return Column(children: [
-      PlayerScreenImage(imageUrl: track.imageUrl),
-      TrackTitlePlusSub(
-        title: track.name,
-        subTitle: track.artistName,
-        hPad: 40,
+      PlayerScreenImage(
+        imageUrl: trackExist ? track!.imageUrl : defaultImageSource,
       ),
+      if (trackExist)
+        TrackTitlePlusSub(
+          title: track!.name,
+          subTitle: track!.artistName,
+          hPad: 40,
+        ),
     ]);
   }
 }

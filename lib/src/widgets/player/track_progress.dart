@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:just_audio/just_audio.dart';
 
 import '../../misc/titles.dart';
 
 class TrackProgress extends StatelessWidget {
-  const TrackProgress({super.key});
+  final AudioPlayer _player;
+  const TrackProgress(this._player, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 40),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(40, 40, 40, 0),
       child: ProgressBar(
-        progress: Duration(seconds: 10),
-        total: Duration(seconds: 30),
+        progress: _player.position,
+        total: _player.duration ?? const Duration(seconds: 30),
         progressBarColor: Colors.red,
         thumbColor: Colors.white,
         baseBarColor: Colors.grey,
