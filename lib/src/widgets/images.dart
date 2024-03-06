@@ -175,17 +175,31 @@ class PlayerScreenImage extends StatelessWidget {
         margin: const EdgeInsets.all(16),
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.white,
-              blurRadius: 10,
-              blurStyle: BlurStyle.outer,
-            ),
-          ],
         ),
         clipBehavior: Clip.antiAlias,
         child: ImageThumbnail(imageUrl: imageUrl),
       ),
     );
+  }
+}
+
+class PlayerScreenFigure extends StatelessWidget {
+  final String imageUrl;
+  final String subTitle;
+  final String title;
+
+  const PlayerScreenFigure({
+    super.key,
+    required this.imageUrl,
+    required this.subTitle,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      PlayerScreenImage(imageUrl: imageUrl),
+      TrackTitlePlusSub(title: title, subTitle: subTitle, hPad: 40),
+    ]);
   }
 }

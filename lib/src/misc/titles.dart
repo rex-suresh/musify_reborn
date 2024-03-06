@@ -1,21 +1,47 @@
 import 'package:flutter/material.dart';
 
-SliverAppBar screenTitle(String title) {
-  var textStyle = const TextStyle(
-    color: Colors.white,
-    fontSize: 32,
-    fontWeight: FontWeight.w200,
-  );
+const inActiveTextXSmall = TextStyle(
+  color: Colors.grey,
+  fontSize: 12,
+);
 
-  return SliverAppBar(
-    title: Text(
-      title,
-      style: textStyle,
-    ),
-    foregroundColor: Colors.transparent,
-    backgroundColor: Colors.transparent,
-  );
-}
+const inActiveTextSmall = TextStyle(
+  color: Colors.grey,
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+);
+
+const activeTextXXSmall = TextStyle(
+  color: Colors.white,
+  fontSize: 10,
+);
+
+const activeTextSmall = TextStyle(
+  color: Colors.white,
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+);
+
+const activeTextMedium = TextStyle(
+  color: Colors.white,
+  fontSize: 18,
+  fontWeight: FontWeight.w500,
+);
+
+const activeTextXLarge = TextStyle(
+  color: Colors.white,
+  fontSize: 32,
+  fontWeight: FontWeight.w200,
+);
+
+SliverAppBar screenTitle(String title) => SliverAppBar(
+      title: Text(
+        title,
+        style: activeTextXLarge,
+      ),
+      foregroundColor: Colors.transparent,
+      backgroundColor: Colors.transparent,
+    );
 
 SliverAppBar subScreenTitleOf(String title) {
   return SliverAppBar(
@@ -43,13 +69,13 @@ class TitlePlusSub extends StatelessWidget {
       contentPadding: EdgeInsets.symmetric(horizontal: hPad),
       title: Text(
         title,
-        style: const TextStyle(fontSize: 14),
+        style: activeTextSmall,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
       subtitle: Text(
         subTitle,
-        style: const TextStyle(fontSize: 12, color: Colors.grey),
+        style: inActiveTextXSmall,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
@@ -77,14 +103,14 @@ class TitlePlusDescription extends StatelessWidget {
       contentPadding: EdgeInsets.symmetric(horizontal: hPad, vertical: vPad),
       title: Text(
         title,
-        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+        style: activeTextSmall,
         textDirection: TextDirection.rtl,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
       subtitle: Text(
         description,
-        style: const TextStyle(fontSize: 10, color: Colors.white),
+        style: activeTextXXSmall,
         softWrap: true,
         textDirection: TextDirection.rtl,
         maxLines: 2,
@@ -112,7 +138,7 @@ class CardTitle extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: hPad, vertical: vPad),
       child: Text(
         title,
-        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+        style: activeTextSmall,
         textDirection: TextDirection.rtl,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
@@ -133,10 +159,7 @@ class SubScreenTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: const TextStyle(
-        fontWeight: FontWeight.w500,
-        fontSize: 18,
-      ),
+      style: activeTextMedium,
     );
   }
 }
@@ -157,7 +180,6 @@ class ClippedStyleTitle extends StatelessWidget {
         titleText,
         style: TextStyle(
           color: Theme.of(context).canvasColor,
-          fontFamily: 'Monospace',
           fontWeight: FontWeight.w900,
           fontSize: 24,
           shadows: const [
@@ -188,13 +210,13 @@ class TrackTitlePlusSub extends StatelessWidget {
       contentPadding: EdgeInsets.symmetric(horizontal: hPad),
       title: Text(
         title,
-        style: const TextStyle(fontSize: 18),
+        style: activeTextMedium,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
       subtitle: Text(
         subTitle,
-        style: const TextStyle(fontSize: 14, color: Colors.grey),
+        style: inActiveTextSmall,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
