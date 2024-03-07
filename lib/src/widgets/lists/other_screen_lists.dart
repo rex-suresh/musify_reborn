@@ -4,6 +4,7 @@ import '../../models/models.dart';
 import '../../resources/network_repository.dart';
 import '../card/album_card.dart';
 import '../card/track_card_compact.dart';
+import '../player/queue_controls.dart';
 import 'scrollable_list.dart';
 
 dataListOf(AsyncSnapshot<dynamic> snapshot) =>
@@ -19,10 +20,17 @@ class AlbumTrackDiscography extends StatelessWidget {
     return FutureBuilder(
       future: NetworkRepository.albumTracks(albumId),
       builder: (context, snapshot) {
-        return CrossList(
-          data: dataListOf(snapshot),
-          listTitle: "Tracks",
-          widgetBuilder: (item) => TrackCardCompact(item as Track),
+        final tracksData = dataListOf(snapshot) as List<Track>;
+
+        return Column(
+          children: [
+            // QueueControlsTwin(tracksData),
+            CrossList(
+              data: tracksData,
+              listTitle: "Tracks",
+              widgetBuilder: (item) => TrackCardCompact(item as Track),
+            )
+          ],
         );
       },
     );
@@ -39,11 +47,18 @@ class PlaylistTrackDiscography extends StatelessWidget {
     return FutureBuilder(
       future: NetworkRepository.playlistTracks(playlistId),
       builder: (context, snapshot) {
-        return CrossList(
-          data: dataListOf(snapshot),
-          listTitle: "Tracks",
-          widgetBuilder: (item) => TrackCardCompact(item as Track),
-          gap: 8,
+        final Iterable<dynamic> tracksData = dataListOf(snapshot);
+
+        return Column(
+          children: [
+            QueueControlsTwin(tracksData),
+            CrossList(
+              data: tracksData,
+              listTitle: "Tracks",
+              widgetBuilder: (item) => TrackCardCompact(item as Track),
+              gap: 8,
+            )
+          ],
         );
       },
     );

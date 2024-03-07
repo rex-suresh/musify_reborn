@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../misc/titles.dart';
+import '../../models/player_queue.dart';
 
 class QueueControlsTwin extends StatelessWidget {
-  const QueueControlsTwin({super.key});
+  final Iterable<dynamic> _queueData;
+
+  const QueueControlsTwin(this._queueData, {super.key});
 
   @override
   Widget build(BuildContext context) {
+    final queue = Provider.of<PlayerQueue>(context, listen: true);
+
     return OverflowBar(
       alignment: MainAxisAlignment.center,
       spacing: 20,
       children: [
         TextButton.icon(
-          onPressed: () {},
+          onPressed: () {
+            queue.addAll(_queueData.toList());
+            queue.player.play();
+          },
           icon: const Icon(Icons.play_arrow_rounded),
           label: const Text('Play', style: activeTextMedium),
           style: ButtonStyle(
@@ -21,7 +30,11 @@ class QueueControlsTwin extends StatelessWidget {
           ),
         ),
         TextButton.icon(
-          onPressed: () {},
+          onPressed: () {
+            queue.addAll(_queueData.toList());
+            queue.player.shuffle();
+            queue.player.play();
+          },
           icon: const Icon(Icons.shuffle_rounded),
           label: const Text('Shuffle', style: activeTextMedium),
           style: ButtonStyle(

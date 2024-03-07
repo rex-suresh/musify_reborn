@@ -6,41 +6,53 @@ import 'models.dart';
 
 class PlayerQueue extends ChangeNotifier {
   static int currentIndex = 0;
-  final List<Track> _queue = [];
+  final List<dynamic> _queueData = [];
+  final _queue = ConcatenatingAudioSource(children: []);
   final AudioPlayer player = AudioPlayer();
 
-  void addAll(List<Track> trackList) {
-    _queue.addAll(trackList);
+  AudioSource _prepareAudioSource(dynamic track) =>
+      AudioSource.uri(Uri.parse((track as Track).trackUrl));
+
+  List<AudioSource> _prepareAudioSourceList(List<dynamic> trackList) =>
+      trackList.map(_prepareAudioSource).toList();
+
+  void addAll(List<dynamic> trackList) {
+    _queueData.addAll(trackList);
+    _queue.addAll(_prepareAudioSourceList(trackList));
+
     notifyListeners();
   }
 
   void addToTop(Track track) {
-    _queue.insert(0, track);
+    _queueData.insert(0, track);
+
     notifyListeners();
   }
 
   void clear() {
-    _queue.clear();
+    _queueData.clear();
     currentIndex = 0;
     notifyListeners();
   }
 
   void clearAndAddAll(List<Track> trackList) {
-    _queue.clear();
+    _queueData.clear();
     currentIndex = 0;
     addAll(trackList);
   }
 
   void addNext(Track track) {
-    _queue.insert(currentIndex + 1, track);
+    _queueData.insert(currentIndex + 1, track);
     notifyListeners();
   }
 
   UnmodifiableListView<Track> get tracks {
-    return UnmodifiableListView(_queue);
+    return UnmodifiableListView(_queueData) as UnmodifiableListView<Track>;
   }
 
   Track? get currentTrack {
-    return _queue.length > currentIndex ? _queue.elementAt(currentIndex) : null;
+    return _queueData.length > currentIndex
+        ? _queueData.elementAt(currentIndex)
+        : null;
   }
 }

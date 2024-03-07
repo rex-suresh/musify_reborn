@@ -4,14 +4,28 @@ import 'package:just_audio/just_audio.dart';
 import '../../misc/icon.dart';
 import '../../misc/titles.dart';
 
-class PlayerControls extends StatelessWidget {
-  final AudioPlayer player;
+class PlayerControls extends StatefulWidget {
+  final AudioPlayer _player;
 
-  const PlayerControls(this.player, {super.key});
+  const PlayerControls(this._player, {super.key});
+
+  @override
+  State<PlayerControls> createState() => _PlayerControlsState();
+}
+
+class _PlayerControlsState extends State<PlayerControls> {
+  bool isPlaying = false;
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      isPlaying = widget._player.playing;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    final isPlaying = player.playing;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       child: Flex(
@@ -20,22 +34,35 @@ class PlayerControls extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {
-              player.seekToPrevious();
+              widget._player.seekToPrevious();
             },
             icon: const PlayerControlIcons(Icons.skip_previous_rounded),
           ),
           IconButton(
             onPressed: () {
-              isPlaying ? player.pause() : player.play();
+              if (isPlaying) {
+                widget._player.pause();
+                setState(() {
+                  isPlaying = false;
+                });
+                return;
+              }
+
+              widget._player.play();
+              setState(() {
+                isPlaying = true;
+              });
             },
             icon: PlayerControlIcons(
-              player.playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
+              widget._player.playing
+                  ? Icons.pause_rounded
+                  : Icons.play_arrow_rounded,
               size: 40,
             ),
           ),
           IconButton(
             onPressed: () {
-              player.seekToNext();
+              widget._player.seekToNext();
             },
             icon: const PlayerControlIcons(Icons.skip_next_rounded),
           ),
