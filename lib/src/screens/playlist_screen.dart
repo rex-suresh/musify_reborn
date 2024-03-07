@@ -14,9 +14,7 @@ class PlaylistScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenContents = [
-      PlaylistScreenImage(
-        imageUrl: playlist.imageUrl,
-      ),
+      PlaylistScreenImage(imageUrl: playlist.imageUrl, tag: playlist.id),
       const QueueControlsTwin(),
       PlaylistTrackDiscography(
         playlistId: playlist.id,

@@ -34,16 +34,19 @@ class ArtistCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           direction: Axis.vertical,
           children: [
-            Container(
-              width: double.infinity,
-              height: cardHeight,
-              clipBehavior: Clip.hardEdge,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.transparent,
-                backgroundBlendMode: BlendMode.color,
+            Hero(
+              tag: artist.id,
+              child: Container(
+                height: cardHeight,
+                clipBehavior: Clip.hardEdge,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: ImageAvatar(imageUrl: artist.imageUrl),
+                ),
               ),
-              child: ImageAvatar(imageUrl: artist.imageUrl),
             ),
             CardTitle(
               title: artist.name,

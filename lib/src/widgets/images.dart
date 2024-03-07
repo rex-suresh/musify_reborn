@@ -1,10 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../misc/titles.dart';
 import '../models/models.dart';
-import '../models/player_queue.dart';
 
 class ImageThumbnail extends StatelessWidget {
   final String imageUrl;
@@ -37,7 +35,7 @@ class ImageThumbnail extends StatelessWidget {
                       loadingProgress.expectedTotalBytes!
                   : null,
               strokeWidth: 2,
-              color: Colors.white,
+              color: Colors.red,
             ),
           ),
         );
@@ -89,8 +87,13 @@ class ImageAvatar extends StatelessWidget {
 
 class AlbumScreenImage extends StatelessWidget {
   final String imageUrl;
+  final String tag;
 
-  const AlbumScreenImage({super.key, required this.imageUrl});
+  const AlbumScreenImage({
+    super.key,
+    required this.imageUrl,
+    required this.tag,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -98,15 +101,18 @@ class AlbumScreenImage extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         ImageThumbnail(imageUrl: imageUrl),
-        BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Center(
-            child: FractionallySizedBox(
-              widthFactor: 0.8,
-              child: ClipRRect(
-                clipBehavior: Clip.hardEdge,
-                borderRadius: BorderRadius.circular(10),
-                child: ImageThumbnail(imageUrl: imageUrl),
+        Hero(
+          tag: tag,
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: Center(
+              child: FractionallySizedBox(
+                widthFactor: 0.8,
+                child: ClipRRect(
+                  clipBehavior: Clip.hardEdge,
+                  borderRadius: BorderRadius.circular(10),
+                  child: ImageThumbnail(imageUrl: imageUrl),
+                ),
               ),
             ),
           ),
@@ -118,18 +124,31 @@ class AlbumScreenImage extends StatelessWidget {
 
 class PlaylistScreenImage extends StatelessWidget {
   final String imageUrl;
+  final String tag;
+  final double _spaceV = 8;
+  final double _spaceH = 16;
 
-  const PlaylistScreenImage({super.key, required this.imageUrl});
+  const PlaylistScreenImage({
+    super.key,
+    required this.imageUrl,
+    required this.tag,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+    return Hero(
+      tag: tag,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: _spaceH, vertical: _spaceV),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: AspectRatio(
+          aspectRatio: 1,
+          child: ImageThumbnail(imageUrl: imageUrl),
+        ),
       ),
-      clipBehavior: Clip.antiAlias,
-      child: ImageThumbnail(imageUrl: imageUrl),
     );
   }
 }
@@ -137,11 +156,13 @@ class PlaylistScreenImage extends StatelessWidget {
 class ArtistScreenImage extends StatelessWidget {
   final String imageUrl;
   final String figureText;
+  final String tag;
 
   const ArtistScreenImage({
     super.key,
     required this.imageUrl,
     required this.figureText,
+    required this.tag,
   });
 
   @override
@@ -155,7 +176,10 @@ class ArtistScreenImage extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomRight,
         children: [
-          ImageThumbnail(imageUrl: imageUrl),
+          Hero(
+            tag: tag,
+            child: ImageThumbnail(imageUrl: imageUrl),
+          ),
           ClippedStyleTitle(titleText: figureText),
         ],
       ),

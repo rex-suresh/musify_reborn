@@ -14,9 +14,7 @@ class AlbumScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenContents = [
-      AlbumScreenImage(
-        imageUrl: album.imageUrl,
-      ),
+      AlbumScreenImage(imageUrl: album.imageUrl, tag: album.id),
       const QueueControlsTwin(),
       AlbumTrackDiscography(
         albumId: album.id,

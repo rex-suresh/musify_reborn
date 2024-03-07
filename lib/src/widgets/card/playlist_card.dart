@@ -24,34 +24,38 @@ class PlaylistCard extends StatelessWidget {
         );
       },
       child: Card(
-        clipBehavior: Clip.hardEdge,
+        clipBehavior: Clip.antiAlias,
         child: AspectRatio(
           aspectRatio: 1,
           child: Stack(
-            clipBehavior: Clip.hardEdge,
+            clipBehavior: Clip.antiAlias,
             alignment: AlignmentDirectional.bottomEnd,
             children: [
-              SizedBox(
-                width: size,
-                height: size,
-                child: ImageThumbnail(imageUrl: playlist.imageUrl),
+              Hero(
+                tag: playlist.id,
+                child: SizedBox(
+                  width: size,
+                  height: size,
+                  child: ImageThumbnail(imageUrl: playlist.imageUrl),
+                ),
               ),
               DecoratedBox(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      colors: [
-                        Colors.transparent,
-                        Colors.black87,
-                        Colors.black,
-                      ],
-                    ),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    colors: [
+                      Colors.transparent,
+                      Colors.black87,
+                      Colors.black,
+                    ],
                   ),
-                  child: TitlePlusDescription(
-                    title: playlist.name,
-                    description: playlist.description,
-                    hPad: 8,
-                  ))
+                ),
+                child: TitlePlusDescription(
+                  title: playlist.name,
+                  description: playlist.description,
+                  hPad: 8,
+                ),
+              )
             ],
           ),
         ),

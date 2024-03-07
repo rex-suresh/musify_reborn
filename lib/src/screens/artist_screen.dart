@@ -22,6 +22,7 @@ class ArtistScreen extends StatelessWidget {
               ArtistScreenImage(
                 imageUrl: artist.imageUrl,
                 figureText: artist.name,
+                tag: artist.id,
               ),
               const QueueControlsSingle(),
               ArtistTrackDiscography(artistId: artist.id),

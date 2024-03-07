@@ -33,14 +33,17 @@ class AlbumCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             direction: Axis.vertical,
             children: [
-              Container(
-                height: size,
-                width: size,
-                padding: EdgeInsets.all(spacing),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(spacing),
-                  clipBehavior: Clip.hardEdge,
-                  child: ImageThumbnail(imageUrl: album.imageUrl),
+              Hero(
+                tag: album.id,
+                child: Container(
+                  height: size,
+                  width: size,
+                  padding: EdgeInsets.all(spacing),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(spacing),
+                    clipBehavior: Clip.hardEdge,
+                    child: ImageThumbnail(imageUrl: album.imageUrl),
+                  ),
                 ),
               ),
               TitlePlusSub(
